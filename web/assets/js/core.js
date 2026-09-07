@@ -304,7 +304,7 @@ const Elite = (() => {
     el.innerHTML = `<div class="pre-inner">
       <div class="pre-ring">
         <svg viewBox="0 0 92 92"><circle class="bg" cx="46" cy="46" r="42"/><circle class="fg" cx="46" cy="46" r="42"/></svg>
-        <div class="pre-vw">VW</div>
+        <img class="pre-logo-img" src="/assets/img/vw-logo.png" alt="Volkswagen Logo" width="56" height="56">
       </div>
       <div class="pre-label">Elite Motors</div>
       <div class="pre-pct">0%</div>

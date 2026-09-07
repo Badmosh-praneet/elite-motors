@@ -346,15 +346,22 @@ h1, h2, h3, h4, h5 {
   transition: stroke-dashoffset .3s linear;
   filter: drop-shadow(0 0 8px var(--blue-a7));
 }
-.pre-vw {
+.pre-logo-img {
   position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  font-family: var(--display);
-  font-weight: 800;
-  font-size: 1.1rem;
-  letter-spacing: -.04em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 0 14px rgba(0, 195, 255, .45));
+  animation: prePulse 2s ease-in-out infinite alternate;
+}
+@keyframes prePulse {
+  0% { transform: translate(-50%, -50%) scale(0.96); filter: drop-shadow(0 0 8px rgba(0, 195, 255, .3)); }
+  100% { transform: translate(-50%, -50%) scale(1.04); filter: drop-shadow(0 0 20px rgba(0, 195, 255, .7)); }
 }
 .pre-label {
   font-family: var(--mono);
@@ -2381,12 +2388,6 @@ div[style*="border-radius:var(--r-xl);overflow:hidden;border:1px solid var(--lin
 /* --- Preloader — richer ring style ---------------------------------------- */
 .pre-ring .fg {
   filter: drop-shadow(0 0 12px var(--blue)) drop-shadow(0 0 24px var(--blue-a55));
-}
-.pre-vw {
-  background: linear-gradient(135deg, var(--blue-300), var(--blue));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
 }
 .pre-label { color: var(--elite); letter-spacing: .35em; }
 
