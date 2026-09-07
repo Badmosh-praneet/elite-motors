@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Outlets â€” Volkswagen Elite Motors</title>
+<meta name="description" content="Volkswagen Elite Motors showroom and service centre â€” SY No. 49/8-9, 10, Hosur Rd, Singasandra, Bengaluru, Karnataka 560100.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/elite.css">
+<link rel="icon" type="image/png" href="/assets/img/vw-logo.png">
+<script>
+  (function () {
+    var w = window;
+    w.Perfox = w.Perfox || function () {
+      (w.Perfox.q = w.Perfox.q || []).push(arguments);
+    };
+  })();
+</script>
+<script src="https://skill-mine-api.perfox.ai/widget/v1/widget.js"
+        data-site="sa_site_live_1Y359MWPZR04A7VVD44KYZ24TN7BPWZT"
+        defer></script>
+</head>
+<body>
+<main id="main" tabindex="-1">
+
+<header class="phead outlets">
+  <div class="wrap">
+    <div class="crumbs"><a href="/">Home</a> / <span>Outlets</span></div>
+    <div class="eyebrow">Find us</div>
+    <h1 class="h-lg">Hosur Road,<br>Singasandra.</h1>
+    <p class="lede">Showroom, workshop and bodyshop on one site â€” minutes from the Hosur Road junction and Electronic City.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <div class="pills" id="typeFilters" style="margin-bottom:34px" data-reveal></div>
+    <div class="grid g-2" id="outletGrid"></div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--ink-1);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <div class="eyebrow">Getting here</div>
+      <h2 class="h-md" style="margin-top:16px">On the map.</h2>
+    </div>
+    <div data-reveal style="border-radius:var(--r-xl);overflow:hidden;border:1px solid var(--line);position:relative;background:var(--ink-2)">
+      <iframe
+        title="Volkswagen Elite Motors on Google Maps"
+        src="https://www.google.com/maps?q=SY+No.+49%2F8-9%2C+10%2C+Hosur+Rd%2C+Singasandra%2C+Bengaluru%2C+Karnataka+560100&output=embed"
+        style="width:100%;height:clamp(320px,50vh,520px);border:0;filter:grayscale(.35) invert(.92) hue-rotate(180deg) contrast(.9)"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:26px" data-reveal>
+      <a class="btn" href="https://maps.app.goo.gl/w4kyArssdDreAsSu7" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+      <a class="btn btn-ghost" href="tel:+918040138004">Call 080 4013 8004</a>
+    </div>
+  </div>
+</section>
+
+<section class="section center">
+  <div class="wrap">
+    <h2 class="h-md" data-reveal>Planning a visit?</h2>
+    <p class="lede" style="margin:18px auto 32px" data-reveal>Book ahead and we'll have the car â€” and a consultant â€” ready for you.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap" data-reveal>
+      <a class="btn btn-lg" href="/contact.html#test-drive">Book a Test Drive</a>
+      <a class="btn btn-lg btn-ghost" href="/service.html#book">Book a Service</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script src="/assets/js/core.js"></script>
+<script>
+(async function () {
+  const $ = (s) => document.querySelector(s);
+  const grid = $('#outletGrid');
+
+  function card(o) {
+    return `<article class="card ocard" data-reveal>
+      <div class="ocard-type">${Elite.ICON.pin} ${Elite.esc(o.type)}</div>
+      <h2 class="h-sm">${Elite.esc(o.name)}</h2>
+      <dl>
+        <div><dt>Address</dt><dd>${Elite.esc(o.full_address)}</dd></div>
+        <div><dt>Phone</dt><dd><a href="tel:${o.phone.replace(/\s/g, '')}">${Elite.esc(o.phone)}</a></dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:${o.email}">${Elite.esc(o.email)}</a></dd></div>
+        <div><dt>Hours</dt><dd>${o.hours.map((h) => `${h.days}: ${h.open} â€“ ${h.close}`).join('<br>')}</dd></div>
+      </dl>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn btn-sm" href="${o.map_url}" target="_blank" rel="noopener noreferrer">Directions</a>
+        <a class="btn btn-sm btn-ghost" href="tel:${o.phone.replace(/\s/g, '')}">Call</a>
+      </div>
+    </article>`;
+  }
+
+  async function load(type) {
+    const qs = type && type !== 'all' ? `?type=${encodeURIComponent(type)}` : '';
+    try {
+      const { items } = await Elite.get('/outlets' + qs);
+      grid.innerHTML = items.length ? items.map(card).join('')
+        : '<div class="empty" style="grid-column:1/-1"><h3>No outlets match</h3><p>Try another filter.</p></div>';
+      Elite.reveal(grid);
+    } catch (e) {
+      grid.innerHTML = '<div class="empty" style="grid-column:1/-1"><h3>Could not reach the API</h3><p>Start the server and refresh.</p></div>';
+    }
+  }
+
+  const types = [['all', 'All Outlets'], ['sales', 'Sales'], ['service', 'Service'], ['bodyshop', 'Bodyshop']];
+  $('#typeFilters').innerHTML = types.map(([v, l], i) =>
+    `<button class="pill${i === 0 ? ' on' : ''}" data-type="${v}">${l}</button>`).join('');
+  $('#typeFilters').addEventListener('click', (e) => {
+    const pill = e.target.closest('.pill');
+    if (!pill) return;
+    $('#typeFilters').querySelectorAll('.pill').forEach((p) => p.classList.remove('on'));
+    pill.classList.add('on');
+    load(pill.dataset.type);
+  });
+
+  load('all');
+})();
+</script>
+</body>
+</html>

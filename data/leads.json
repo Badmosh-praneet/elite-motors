@@ -1,0 +1,78 @@
+[
+  {
+    "id": "career-6e4a025f1b",
+    "type": "career",
+    "received_at": "2026-08-31T10:27:02+00:00",
+    "status": "new",
+    "data": {
+      "name": "Praneet Gogoi",
+      "email": "p@example.com",
+      "mobile": "9876543210",
+      "job_id": "sales-consultant"
+    }
+  },
+  {
+    "id": "contact-0934f877e2",
+    "type": "contact",
+    "received_at": "2026-08-31T10:27:03+00:00",
+    "status": "new",
+    "data": {
+      "name": "Praneet Gogoi",
+      "email": "p@example.com",
+      "mobile": "9876543210",
+      "message": "Hello"
+    }
+  },
+  {
+    "id": "insurance-e1beb02bac",
+    "type": "insurance",
+    "received_at": "2026-08-31T10:27:03+00:00",
+    "status": "new",
+    "data": {
+      "full_name": "Praneet Gogoi",
+      "mobile": "9876543210",
+      "email": "p@example.com",
+      "registration_number": "KA01AB1234"
+    }
+  },
+  {
+    "id": "rent-e846c7bc78",
+    "type": "rent",
+    "received_at": "2026-08-31T10:27:03+00:00",
+    "status": "new",
+    "data": {
+      "first_name": "Praneet",
+      "last_name": "Gogoi",
+      "email": "p@example.com",
+      "mobile": "9876543210",
+      "model": "Golf GTI",
+      "start_date": "2027-01-21",
+      "end_date": "2027-01-21"
+    }
+  },
+  {
+    "id": "service-5ec3caced4",
+    "type": "service",
+    "received_at": "2026-08-31T10:27:03+00:00",
+    "status": "new",
+    "data": {
+      "name": "Praneet Gogoi",
+      "mobile": "9876543210",
+      "model": "Volkswagen Taigun",
+      "service_centre": "Hosur Road"
+    }
+  },
+  {
+    "id": "test-drive-2f925c31d6",
+    "type": "test-drive",
+    "received_at": "2026-08-31T10:27:03+00:00",
+    "status": "new",
+    "data": {
+      "first_name": "Praneet",
+      "last_name": "Gogoi",
+      "email": "p@example.com",
+      "mobile": "9876543210",
+      "model": "Golf GTI"
+    }
+  }
+]

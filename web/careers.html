@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Careers â€” Volkswagen Elite Motors</title>
+<meta name="description" content="Open roles at Volkswagen Elite Motors, Hosur Road, Bengaluru â€” Sales Consultant, Front Office Executive, Customer Relationship Manager, Senior Technician.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/elite.css">
+<link rel="icon" type="image/png" href="/assets/img/vw-logo.png">
+<script>
+  (function () {
+    var w = window;
+    w.Perfox = w.Perfox || function () {
+      (w.Perfox.q = w.Perfox.q || []).push(arguments);
+    };
+  })();
+</script>
+<script src="https://skill-mine-api.perfox.ai/widget/v1/widget.js"
+        data-site="sa_site_live_1Y359MWPZR04A7VVD44KYZ24TN7BPWZT"
+        defer></script>
+</head>
+<body>
+<main id="main" tabindex="-1">
+
+<header class="phead careers">
+  <div class="wrap">
+    <div class="crumbs"><a href="/">Home</a> / <span>Careers</span></div>
+    <div class="eyebrow">Join us</div>
+    <h1 class="h-lg">Work on cars<br>worth the badge.</h1>
+    <p class="lede" id="careersLede"></p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <div class="eyebrow">Open roles</div>
+      <h2 class="h-md" style="margin-top:16px">Where we're hiring.</h2>
+    </div>
+    <div class="grid g-2" id="jobGrid"></div>
+  </div>
+</section>
+
+<section class="section" id="apply" style="background:var(--ink-1);border-block:1px solid var(--line)">
+  <div class="wrap split">
+    <div data-reveal="left">
+      <div class="eyebrow">Apply</div>
+      <h2 class="h-lg" style="margin:18px 0 22px">Tell us about<br>yourself.</h2>
+      <p class="lede" style="margin-bottom:30px">Our HR team reviews every application within five working days. If there's a fit, you'll hear from us directly.</p>
+      <ul class="ticks">
+        <li>Volkswagen-standard training and certification</li>
+        <li>Structured career path across sales, service and CX</li>
+        <li>A workshop equipped to factory specification</li>
+      </ul>
+      <div style="border-radius:var(--r-xl);overflow:hidden;border:1px solid var(--line);margin-top:34px">
+        <img src="/assets/img/career/9e44b17c-d30e-4236-a8d0-05d02dcae362.jpg" alt="Careers at Volkswagen Elite Motors" style="width:100%;aspect-ratio:16/10;object-fit:cover">
+      </div>
+    </div>
+    <div data-reveal="right">
+      <form class="card" id="applyForm" style="padding:clamp(26px,3.4vw,38px)" novalidate>
+        <div class="form-grid">
+          <div class="field full"><label for="nm">Full Name*</label><input id="nm" name="name" required></div>
+          <div class="field"><label for="em">Email*</label><input id="em" name="email" type="email" required></div>
+          <div class="field"><label for="mo">Mobile*</label><input id="mo" name="mobile" type="tel" required></div>
+          <div class="field full"><label for="jb">Applicable Job*</label>
+            <select id="jb" name="job_id" required><option value="">Select Applicable Job</option></select></div>
+          <div class="field"><label for="ex">Years of Experience</label><input id="ex" name="experience" type="number" min="0" max="50" placeholder="0"></div>
+          <div class="field"><label for="cv">Attach Your CV (pdf, docx)</label><input id="cv" name="cv_filename" type="file" accept=".pdf,.docx"></div>
+          <div class="field full"><label for="ms">Anything else we should know?</label><textarea id="ms" name="message" placeholder="A short note about why this role."></textarea></div>
+        </div>
+        <p class="dim mono" style="font-size:0.70rem;letter-spacing:.12em;margin-bottom:18px">(*) Required. Demo build â€” the CV filename is recorded, the file itself is not uploaded.</p>
+        <button class="btn btn-block" type="submit">Submit Application</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script src="/assets/js/core.js"></script>
+<script>
+(async function () {
+  const $ = (s) => document.querySelector(s);
+
+  try {
+    const c = await Elite.get('/careers');
+    $('#careersLede').textContent = c.description;
+
+    $('#jobGrid').innerHTML = c.jobs.map((j, i) => `
+      <article class="card ocard" data-reveal style="--d:${i * 70}ms">
+        <div class="ocard-type">${Elite.ICON.box} ${Elite.esc(j.department)}</div>
+        <h3 class="h-sm">${Elite.esc(j.title)}</h3>
+        <p class="muted" style="font-size:.92rem;margin:14px 0 20px">${Elite.esc(j.description)}</p>
+        <div style="display:flex;gap:9px;flex-wrap:wrap;margin-bottom:22px">
+          <span class="chip"><i></i> ${Elite.esc(j.type)}</span>
+          <span class="chip"><i></i> ${Elite.esc(j.location)}</span>
+        </div>
+        <button class="btn btn-sm" data-job="${j.id}">Apply for this role</button>
+      </article>`).join('');
+
+    $('#jb').insertAdjacentHTML('beforeend',
+      c.jobs.map((j) => `<option value="${j.id}">${Elite.esc(j.title)}</option>`).join(''));
+
+    $('#jobGrid').addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-job]');
+      if (!btn) return;
+      $('#jb').value = btn.dataset.job;
+      document.getElementById('apply').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    Elite.reveal($('#jobGrid'));
+  } catch (e) {
+    $('#jobGrid').innerHTML = '<div class="empty" style="grid-column:1/-1"><h3>Could not reach the API</h3><p>Start the server and refresh.</p></div>';
+  }
+
+  Elite.bindForm($('#applyForm'), '/careers/apply', {
+    transform: (data) => {
+      const f = $('#cv').files[0];
+      data.cv_filename = f ? f.name : '';
+      delete data.cv;
+    },
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>API â€” Volkswagen Elite Motors</title>
+<meta name="description" content="The Volkswagen Elite Motors REST API â€” OpenAPI 3.1, interactive Swagger UI, and a full endpoint index.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/elite.css">
+<link rel="icon" type="image/png" href="/assets/img/vw-logo.png">
+</head>
+<body>
+<main id="main" tabindex="-1">
+
+<header class="phead">
+  <div class="wrap">
+    <div class="crumbs"><a href="/">Home</a> / <span>API</span></div>
+    <div class="eyebrow">Developer</div>
+    <h1 class="h-lg">Elite Motors<br>API <span class="grad-text">v2</span>.</h1>
+    <p class="lede">A read API over a scraped knowledge base of volkswagenbangalore.in â€” every car, variant, price, service package and FAQ the dealership publishes, as JSON.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:26px" id="badges">
+      <span class="chip"><i></i> FastAPI</span>
+      <span class="chip"><i></i> OpenAPI 3.1</span>
+      <span class="chip"><i></i> CORS enabled</span>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:30px">
+      <a class="btn btn-lg" href="/docs">Open Swagger UI <svg class="btn-arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a class="btn btn-lg btn-ghost" href="/redoc">ReDoc</a>
+      <a class="btn btn-lg btn-ghost" href="/openapi.json">openapi.json</a>
+    </div>
+  </div>
+</header>
+
+<div class="stats" id="stats"></div>
+
+<!-- endpoint index -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <div class="eyebrow">Reference</div>
+      <h2 class="h-md" style="margin-top:16px">Every endpoint.</h2>
+      <p class="lede">Read live from the OpenAPI schema, so this list can never drift from the API. Click any row to open it in Swagger UI.</p>
+    </div>
+    <div class="field" style="max-width:420px;margin-bottom:26px">
+      <input id="epFilter" type="search" placeholder="Filter endpointsâ€¦" autocomplete="off">
+    </div>
+    <div id="groups"></div>
+  </div>
+</section>
+
+<!-- usage -->
+<section class="section" style="background:var(--ink-1);border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <div class="eyebrow">Integration</div>
+      <h2 class="h-md" style="margin-top:16px">Wire it into anything.</h2>
+      <p class="lede">The same API drives this website, and would drive a mobile app, a CRM sync or a dealer dashboard without changes.</p>
+    </div>
+    <div class="grid g-3">
+      <div class="card fcard" data-reveal>
+        <h3 style="margin-bottom:14px">JavaScript</h3>
+        <pre class="mono" style="font-size:.72rem;color:var(--fg-2);white-space:pre-wrap;line-height:1.7">const res = await fetch(
+  '/api/cars?body_type=SUV&sort=price_asc'
+);
+const { items } = await res.json();</pre>
+      </div>
+      <div class="card fcard" data-reveal style="--d:70ms">
+        <h3 style="margin-bottom:14px">cURL</h3>
+        <pre class="mono" style="font-size:.72rem;color:var(--fg-2);white-space:pre-wrap;line-height:1.7">curl -X POST \
+  http://localhost:8000/api/finance/emi \
+  -H 'Content-Type: application/json' \
+  -d '{"principal":1500000,
+       "rate":9.25,
+       "tenure_months":60}'</pre>
+      </div>
+      <div class="card fcard" data-reveal style="--d:140ms">
+        <h3 style="margin-bottom:14px">Python</h3>
+        <pre class="mono" style="font-size:.72rem;color:var(--fg-2);white-space:pre-wrap;line-height:1.7">import requests
+r = requests.get(
+  'http://localhost:8000/api/cars/golf-gti'
+)
+print(r.json()['specs']['power'])</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script src="/assets/js/core.js"></script>
+<script>
+(async function () {
+  const $ = (s) => document.querySelector(s);
+  let spec = null;
+
+  try {
+    spec = await (await fetch('/openapi.json')).json();
+  } catch (e) {
+    $('#groups').innerHTML = '<div class="empty"><h3>Could not load the schema</h3><p>Start the API server and refresh.</p></div>';
+    return;
+  }
+
+  const ops = [];
+  for (const [path, verbs] of Object.entries(spec.paths)) {
+    for (const [verb, op] of Object.entries(verbs)) {
+      ops.push({
+        path, verb: verb.toUpperCase(),
+        summary: op.summary || '',
+        description: (op.description || '').split('\n')[0],
+        tag: (op.tags || ['Other'])[0],
+        opId: op.operationId || '',
+      });
+    }
+  }
+
+  /* live counts */
+  try {
+    const h = await Elite.get('/health');
+    $('#stats').innerHTML = [
+      { label: 'Endpoints', value: ops.length },
+      { label: 'Cars', value: h.cars_loaded },
+      { label: 'Variants', value: h.variants_loaded },
+      { label: 'Schemas', value: Object.keys(spec.components?.schemas || {}).length },
+    ].map((s) => `
+      <div class="stat">
+        <div class="stat-n"><span data-count="${s.value}" data-suffix="">0</span></div>
+        <div class="stat-l">${s.label}</div>
+      </div>`).join('');
+    Elite.counters();
+    $('#badges').insertAdjacentHTML('beforeend', `<span class="chip"><i></i> v${spec.info.version}</span>`);
+  } catch (e) { console.warn(e); }
+
+  /* endpoint index, grouped by tag in schema order */
+  const order = (spec.tags || []).map((t) => t.name);
+  const describe = Object.fromEntries((spec.tags || []).map((t) => [t.name, t.description || '']));
+
+  function render(filter) {
+    const f = filter.trim().toLowerCase();
+    const shown = ops.filter((o) => !f ||
+      o.path.toLowerCase().includes(f) || o.summary.toLowerCase().includes(f) ||
+      o.verb.toLowerCase().includes(f) || o.tag.toLowerCase().includes(f));
+
+    const byTag = {};
+    shown.forEach((o) => (byTag[o.tag] ||= []).push(o));
+
+    const tags = Object.keys(byTag).sort((a, b) => {
+      const ia = order.indexOf(a), ib = order.indexOf(b);
+      return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib);
+    });
+
+    if (!tags.length) {
+      $('#groups').innerHTML = '<div class="empty"><h3>Nothing matches</h3><p>Try a different term.</p></div>';
+      return;
+    }
+
+    $('#groups').innerHTML = tags.map((tag) => `
+      <div style="margin-bottom:40px" data-reveal>
+        <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px">
+          <h3 class="h-sm">${Elite.esc(tag)}</h3>
+          <span class="mono dim" style="font-size:0.70rem;letter-spacing:.16em">${byTag[tag].length} endpoints</span>
+        </div>
+        <p class="muted" style="font-size:.9rem;margin-bottom:18px">${Elite.esc(describe[tag] || '')}</p>
+        <div class="api-list" style="max-height:none">
+          ${byTag[tag].sort((a, b) => a.path.localeCompare(b.path)).map((o) => `
+            <a class="api-ep" href="/docs#/${encodeURIComponent(o.tag)}/${encodeURIComponent(o.opId)}">
+              <span class="verb ${o.verb.toLowerCase()}">${o.verb}</span>
+              <span style="flex:1;min-width:0">${Elite.esc(o.path)}</span>
+              <span class="dim" style="font-family:var(--sans);font-size:.78rem;text-align:right">${Elite.esc(o.summary)}</span>
+            </a>`).join('')}
+        </div>
+      </div>`).join('');
+    Elite.reveal($('#groups'));
+  }
+
+  $('#epFilter').addEventListener('input', (e) => render(e.target.value));
+  render('');
+})();
+</script>
+</body>
+</html>

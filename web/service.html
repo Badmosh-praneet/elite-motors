@@ -1,0 +1,284 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Service &amp; Ownership â€” Volkswagen Elite Motors</title>
+<meta name="description" content="Book a Volkswagen service at Elite Motors Bengaluru. Service Value Packages, extended warranty, roadside assistance and insurance â€” certified technicians, 100% genuine parts.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/elite.css">
+<link rel="icon" type="image/png" href="/assets/img/vw-logo.png">
+<script>
+  (function () {
+    var w = window;
+    w.Perfox = w.Perfox || function () {
+      (w.Perfox.q = w.Perfox.q || []).push(arguments);
+    };
+  })();
+</script>
+<script src="https://skill-mine-api.perfox.ai/widget/v1/widget.js"
+        data-site="sa_site_live_1Y359MWPZR04A7VVD44KYZ24TN7BPWZT"
+        defer></script>
+</head>
+<body>
+<main id="main" tabindex="-1">
+
+<header class="phead service">
+  <div class="wrap">
+    <div class="crumbs"><a href="/">Home</a> / <span>Service</span></div>
+    <div class="eyebrow">Ownership</div>
+    <h1 class="h-lg">We don't stop<br>at the handover.</h1>
+    <p class="lede">Certified technicians, factory diagnostics and 100% genuine parts â€” plus packages that protect you from tomorrow's prices.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:30px">
+      <a class="btn" href="#book">Book a Service</a>
+      <a class="btn btn-ghost" href="#packages">Service Value Packages</a>
+    </div>
+  </div>
+</header>
+
+<!-- what we do -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <div class="eyebrow">Workshop</div>
+      <h2 class="h-lg" style="margin-top:16px">What happens<br>behind the bay door.</h2>
+    </div>
+    <div class="grid g-3" id="serviceGrid"></div>
+  </div>
+</section>
+
+<!-- book -->
+<section class="section" id="book" style="background:var(--ink-1);border-block:1px solid var(--line)">
+  <div class="wrap split">
+    <div data-reveal="left">
+      <div class="eyebrow">Booking</div>
+      <h2 class="h-lg" style="margin:18px 0 22px">Book your slot.</h2>
+      <p class="lede" style="margin-bottom:30px">We service every Volkswagen sold in India â€” including the older Polo, Vento, Jetta and Passat generations.</p>
+      <ul class="ticks" style="margin-bottom:32px">
+        <li>Free pick-up and drop within Bengaluru city limits</li>
+        <li>Video of the actual work carried out on your car</li>
+        <li>Estimate approved by you before any spanner is lifted</li>
+        <li>Complimentary wash and vacuum on every visit</li>
+      </ul>
+      <div class="card" style="padding:24px">
+        <div class="ocard-type" id="hoursIco"></div>
+        <div id="serviceHours"></div>
+      </div>
+    </div>
+    <div data-reveal="right">
+      <form class="card" id="svcForm" style="padding:clamp(26px,3.4vw,38px)" novalidate>
+        <div class="form-grid">
+          <div class="field full"><label for="nm">Your Name*</label><input id="nm" name="name" required></div>
+          <div class="field"><label for="mo">Mobile*</label><input id="mo" name="mobile" type="tel" required></div>
+          <div class="field"><label for="em">Email</label><input id="em" name="email" type="email"></div>
+          <div class="field full"><label for="md">Vehicle Model*</label>
+            <select id="md" name="model" required><option value="">Select Vehicle Model</option></select></div>
+          <div class="field full"><label for="sc">Service Centre*</label>
+            <select id="sc" name="service_centre" required><option value="">Select Service Centre</option></select></div>
+          <div class="field"><label for="rn">Registration No.</label><input id="rn" name="registration_number" placeholder="KA 01 AB 1234"></div>
+          <div class="field"><label for="dt">Preferred Date</label><input id="dt" name="preferred_date" type="date"></div>
+          <div class="field full"><label for="ms">Anything we should know?</label><textarea id="ms" name="message" placeholder="Noises, warning lights, last serviceâ€¦"></textarea></div>
+        </div>
+        <button class="btn btn-block" type="submit">Request Service Booking</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- packages -->
+<section class="section" id="packages">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <div class="eyebrow">Service Value Packages</div>
+      <h2 class="h-lg" style="margin-top:16px">Pay today's prices<br>for tomorrow's service.</h2>
+      <p class="lede" id="svpIntro"></p>
+    </div>
+
+    <div class="grid g-4" id="guarantees" style="margin-bottom:44px"></div>
+    <div class="grid g-3" id="packageGrid"></div>
+  </div>
+</section>
+
+<!-- warranty -->
+<section class="section" id="warranty" style="background:var(--ink-1);border-block:1px solid var(--line)">
+  <div class="wrap split">
+    <div data-reveal="left">
+      <div class="eyebrow">Warranty</div>
+      <h2 class="h-lg" style="margin:18px 0 22px">Four years,<br>then some.</h2>
+      <div id="warrantyBody"></div>
+    </div>
+    <div data-reveal="right">
+      <div style="border-radius:var(--r-xl);overflow:hidden;border:1px solid var(--line)">
+        <img src="/assets/img/service-value/Volkswagen-Warranty-3.jpg" alt="Volkswagen warranty" style="width:100%;aspect-ratio:4/3;object-fit:cover">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- roadside -->
+<section class="section" id="roadside">
+  <div class="wrap split">
+    <div data-reveal="left">
+      <div style="border-radius:var(--r-xl);overflow:hidden;border:1px solid var(--line)">
+        <img src="/assets/img/service-value/Volkswagen-Assistance-3.jpg" alt="Volkswagen roadside assistance" style="width:100%;aspect-ratio:4/3;object-fit:cover">
+      </div>
+    </div>
+    <div data-reveal="right">
+      <div class="eyebrow">Roadside Assistance</div>
+      <h2 class="h-lg" style="margin:18px 0 22px">Door-to-door,<br>one phone call away.</h2>
+      <p class="lede" id="rsaNote" style="margin-bottom:26px"></p>
+      <ul class="ticks" id="rsaList" style="margin-bottom:32px"></ul>
+      <a class="btn" href="tel:+918040138004">Call 080 4013 8004</a>
+    </div>
+  </div>
+</section>
+
+<!-- insurance -->
+<section class="section" id="insurance" style="background:var(--ink-1);border-top:1px solid var(--line)">
+  <div class="wrap split">
+    <div data-reveal="left">
+      <div class="eyebrow">Insurance</div>
+      <h2 class="h-lg" style="margin:18px 0 22px">Cover that<br>actually covers.</h2>
+      <p class="lede" id="insDesc" style="margin-bottom:28px"></p>
+      <ul class="ticks" id="insList"></ul>
+    </div>
+    <div data-reveal="right">
+      <form class="card" id="insForm" style="padding:clamp(26px,3.4vw,38px)" novalidate>
+        <h3 class="h-sm" style="margin-bottom:22px">Get a renewal quote</h3>
+        <div class="form-grid">
+          <div class="field full"><label for="ifn">Full Name*</label><input id="ifn" name="full_name" required></div>
+          <div class="field"><label for="imo">Mobile*</label><input id="imo" name="mobile" type="tel" required></div>
+          <div class="field"><label for="iem">Email*</label><input id="iem" name="email" type="email" required></div>
+          <div class="field full"><label for="irn">Registration Number*</label><input id="irn" name="registration_number" placeholder="KA 01 AB 1234" required></div>
+          <div class="field full"><label for="imd">Vehicle Model</label>
+            <select id="imd" name="model"><option value="">Select Vehicle Model</option></select></div>
+          <div class="field"><label for="iyr">Registration Year</label><select id="iyr" name="registration_year"></select></div>
+          <div class="field"><label for="imn">Registration Month</label><select id="imn" name="registration_month"></select></div>
+          <div class="field"><label for="ico">Current Insurer</label><input id="ico" name="insurance_company"></div>
+          <div class="field"><label for="iex">Policy Expiry</label><input id="iex" name="insurance_expiry" type="date"></div>
+        </div>
+        <button class="btn btn-block" type="submit">Request Insurance Quote</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script src="/assets/js/core.js"></script>
+<script>
+(async function () {
+  const $ = (s) => document.querySelector(s);
+
+  /* services */
+  try {
+    const { items } = await Elite.get('/services');
+    $('#serviceGrid').innerHTML = items.map((s, i) => `
+      <article class="card fcard" data-reveal style="--d:${i * 70}ms">
+        <div class="fcard-ico">${Elite.ICON[s.icon] || Elite.ICON.wrench}</div>
+        <h3>${Elite.esc(s.name)}</h3>
+        <p>${Elite.esc(s.description)}</p>
+      </article>`).join('');
+    Elite.reveal($('#serviceGrid'));
+  } catch (e) { console.warn(e); }
+
+  /* hours */
+  try {
+    const dealer = await Elite.get('/dealer');
+    $('#hoursIco').innerHTML = `${Elite.ICON.clock} Service Hours`;
+    $('#serviceHours').innerHTML = dealer.hours.service.map((r) => `
+      <div style="display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid var(--line)">
+        <span class="mono dim" style="font-size:.72rem;letter-spacing:.14em;text-transform:uppercase">${r.days}</span>
+        <b style="font-family:var(--display)">${r.open} â€“ ${r.close}</b>
+      </div>`).join('');
+  } catch (e) { console.warn(e); }
+
+  /* model + centre dropdowns */
+  try {
+    const [{ items: models }, { items: outlets }] = await Promise.all([
+      Elite.get('/service-models'),
+      Elite.get('/outlets?type=service'),
+    ]);
+    const opts = models.map((m) => `<option value="${Elite.esc(m)}">${Elite.esc(m)}</option>`).join('');
+    $('#md').insertAdjacentHTML('beforeend', opts);
+    $('#imd').insertAdjacentHTML('beforeend', opts);
+    $('#sc').insertAdjacentHTML('beforeend',
+      outlets.map((o) => `<option value="${Elite.esc(o.name)}">${Elite.esc(o.name)}</option>`).join(''));
+  } catch (e) { console.warn(e); }
+
+  /* year / month */
+  const yr = $('#iyr'), mn = $('#imn');
+  yr.innerHTML = '<option value="">Year</option>';
+  for (let y = 2026; y >= 1996; y--) yr.insertAdjacentHTML('beforeend', `<option>${y}</option>`);
+  mn.innerHTML = '<option value="">Month</option>' +
+    ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+      .map((m) => `<option>${m}</option>`).join('');
+
+  /* packages */
+  try {
+    const svp = await Elite.get('/service-packages');
+    $('#svpIntro').textContent = svp.intro;
+    $('#guarantees').innerHTML = svp.guarantees.map((g, i) => `
+      <div class="card fcard" data-reveal style="--d:${i * 60}ms;padding:26px">
+        <div class="fcard-ico" style="width:42px;height:42px;margin-bottom:16px">${Elite.ICON.shield}</div>
+        <p style="font-size:.92rem;color:var(--fg)">${Elite.esc(g)}</p>
+      </div>`).join('');
+
+    $('#packageGrid').innerHTML = svp.packages.map((p, i) => `
+      <article class="card" data-reveal style="--d:${i * 80}ms;display:flex;flex-direction:column;${p.featured ? 'border-color:var(--elite)' : ''}">
+        <div style="aspect-ratio:16/9;overflow:hidden;background:var(--ink-3)">
+          <img src="${p.image}" alt="${Elite.esc(p.name)}" style="width:100%;height:100%;object-fit:cover" loading="lazy">
+        </div>
+        <div style="padding:28px;display:flex;flex-direction:column;flex:1">
+          ${p.featured ? '<span class="chip" style="margin-bottom:14px;border-color:var(--elite);color:var(--elite)"><i style="background:var(--elite)"></i> Best value</span>' : ''}
+          <div class="mcard-type">${Elite.esc(p.duration)}</div>
+          <h3 style="font-size:1.4rem;margin:8px 0 20px;letter-spacing:-.03em">${Elite.esc(p.name)}</h3>
+          <ul class="ticks" style="flex:1">${p.benefits.map((b) => `<li>${Elite.esc(b)}</li>`).join('')}</ul>
+          <a class="btn ${p.featured ? 'btn-elite' : 'btn-ghost'} btn-block" style="margin-top:24px" href="#book">Enquire</a>
+        </div>
+      </article>`).join('');
+    Elite.reveal();
+  } catch (e) { console.warn(e); }
+
+  /* warranty */
+  try {
+    const w = await Elite.get('/warranty');
+    $('#warrantyBody').innerHTML = `
+      <p class="lede" style="margin-bottom:26px">${Elite.esc(w.standard.description)}</p>
+      <div class="spec-grid" style="margin-bottom:30px">
+        <div class="spec-cell"><dt>Standard cover</dt><dd>${w.standard.years} years</dd></div>
+        <div class="spec-cell"><dt>Distance</dt><dd>${w.standard.kilometers.toLocaleString('en-IN')} km</dd></div>
+      </div>
+      <h3 class="h-sm" style="margin-bottom:14px">${Elite.esc(w.extended.title)}</h3>
+      <p class="lede" style="margin-bottom:22px">${Elite.esc(w.extended.description)}</p>
+      <div class="grid g-2" style="gap:12px">
+        ${w.extended.options.map((o) => `<div class="card" style="padding:20px">
+          <b style="display:block;font-family:var(--display);font-size:1.05rem">${Elite.esc(o.term)}</b>
+          <span class="mono dim" style="font-size:.7rem;letter-spacing:.14em">up to ${o.kilometers.toLocaleString('en-IN')} km</span>
+        </div>`).join('')}
+      </div>`;
+  } catch (e) { console.warn(e); }
+
+  /* roadside */
+  try {
+    const r = await Elite.get('/roadside-assistance');
+    $('#rsaNote').textContent = r.assistance_note;
+    $('#rsaList').innerHTML = r.coverage.map((c) => `<li>${Elite.esc(c)}</li>`).join('');
+  } catch (e) { console.warn(e); }
+
+  /* insurance */
+  try {
+    const ins = await Elite.get('/insurance');
+    $('#insDesc').textContent = ins.description;
+    $('#insList').innerHTML = ins.benefits.map((b) => `<li>${Elite.esc(b)}</li>`).join('');
+  } catch (e) { console.warn(e); }
+
+  Elite.bindForm($('#svcForm'), '/leads/service');
+  Elite.bindForm($('#insForm'), '/leads/insurance');
+  Elite.reveal();
+})();
+</script>
+</body>
+</html>

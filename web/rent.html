@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Car Rental â€” Volkswagen Elite Motors</title>
+<meta name="description" content="Rent a Volkswagen car from Elite Motors, Bengaluru.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/elite.css">
+<link rel="icon" type="image/png" href="/assets/img/vw-logo.png">
+<script>
+  (function () {
+    var w = window;
+    w.Perfox = w.Perfox || function () {
+      (w.Perfox.q = w.Perfox.q || []).push(arguments);
+    };
+  })();
+</script>
+<script src="https://skill-mine-api.perfox.ai/widget/v1/widget.js"
+        data-site="sa_site_live_1Y359MWPZR04A7VVD44KYZ24TN7BPWZT"
+        defer></script>
+</head>
+<body>
+<main id="main" tabindex="-1">
+
+<header class="phead rentals">
+  <div class="wrap">
+    <div class="crumbs"><a href="/">Home</a> / <span>Rentals</span></div>
+    <div class="eyebrow">Car Rental Service</div>
+    <h1 class="h-lg">Drive a Volkswagen,<br>on your terms.</h1>
+    <p class="lede">Whether it's a weekend getaway or a month-long trip, rent a premium Volkswagen directly from our dealership.</p>
+  </div>
+</header>
+
+<section class="section" style="background:var(--ink-1);border-block:1px solid var(--line)">
+  <div class="wrap split">
+    <div data-reveal="left">
+      <div class="eyebrow">Rent a Car</div>
+      <h2 class="h-lg" style="margin:18px 0 22px">Premium fleet.</h2>
+      <p class="lede" style="margin-bottom:30px">Select from our well-maintained, fully insured fleet of Volkswagen cars. Enjoy transparent pricing with no hidden fees.</p>
+      <ul class="ticks" style="margin-bottom:34px">
+        <li>Fully serviced and sanitized cars</li>
+        <li>Unlimited kilometers option available</li>
+        <li>24/7 roadside assistance included</li>
+        <li>Flexible pickup and drop-off times</li>
+      </ul>
+      <div class="grid g-2" style="gap:14px" id="rentModels"></div>
+    </div>
+    <div data-reveal="right">
+      <form class="card" id="rentForm" style="padding:clamp(26px,3.4vw,38px)" novalidate>
+        <h3 class="h-sm" style="margin-bottom:22px">Booking Request</h3>
+        <div class="form-grid">
+          <div class="field"><label for="fn">First Name*</label><input id="fn" name="first_name" required></div>
+          <div class="field"><label for="ln">Last Name*</label><input id="ln" name="last_name" required></div>
+          <div class="field"><label for="em">Email*</label><input id="em" name="email" type="email" required></div>
+          <div class="field"><label for="mo">Mobile*</label><input id="mo" name="mobile" type="tel" required></div>
+          <div class="field full"><label for="md">Model*</label>
+            <select id="md" name="model" required><option value="">Select a model</option></select></div>
+          <div class="field"><label for="sd">Start Date*</label><input id="sd" name="start_date" type="date" required></div>
+          <div class="field"><label for="ed">End Date*</label><input id="ed" name="end_date" type="date" required></div>
+        </div>
+        <button class="btn btn-block" type="submit">Submit Request</button>
+        <p class="dim mono" style="font-size:0.70rem;letter-spacing:.12em;margin-top:16px;text-align:center">(*) Required</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script src="/assets/js/core.js"></script>
+<script>
+(async function () {
+  const $ = (s) => document.querySelector(s);
+
+  try {
+    const { items } = await Elite.get('/cars');
+    $('#md').insertAdjacentHTML('beforeend',
+      items.map((m) => `<option value="${Elite.esc(m.name)}">${Elite.esc(m.name)}</option>`).join(''));
+
+    $('#rentModels').innerHTML = items.slice(0, 4).map((m) => `
+      <button class="card" data-model="${Elite.esc(m.name)}" style="padding:14px;display:flex;gap:12px;align-items:center;text-align:left">
+        <img src="${m.hero_image}" alt="" style="width:70px;flex-shrink:0;object-fit:contain">
+        <span><b style="display:block;font-family:var(--display);font-size:.92rem">${Elite.esc(m.name)}</b>
+        <span class="dim mono" style="font-size:0.70rem;letter-spacing:.12em">${Elite.esc(m.body_type)}</span></span>
+      </button>`).join('');
+
+    $('#rentModels').addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-model]');
+      if (!btn) return;
+      $('#md').value = btn.dataset.model;
+      $('#md').focus();
+      Elite.toast('Model selected', `${btn.dataset.model} added to your rental request.`);
+    });
+  } catch (e) { console.warn(e); }
+
+  Elite.bindForm($('#rentForm'), '/leads/rent');
+})();
+</script>
+</body>
+</html>

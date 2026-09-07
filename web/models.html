@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>All Models â€” Volkswagen Elite Motors</title>
+<meta name="description" content="Explore every Volkswagen at Elite Motors Bengaluru â€” Tayron R-Line, Golf GTI, Tiguan R-Line, Virtus Sport, Virtus Chrome, Taigun Sport and Taigun Chrome.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/elite.css">
+<link rel="icon" type="image/png" href="/assets/img/vw-logo.png">
+<script>
+  (function () {
+    var w = window;
+    w.Perfox = w.Perfox || function () {
+      (w.Perfox.q = w.Perfox.q || []).push(arguments);
+    };
+  })();
+</script>
+<script src="https://skill-mine-api.perfox.ai/widget/v1/widget.js"
+        data-site="sa_site_live_1Y359MWPZR04A7VVD44KYZ24TN7BPWZT"
+        defer></script>
+</head>
+<body>
+<main id="main" tabindex="-1">
+
+<header class="phead models">
+  <div class="wrap">
+    <div class="crumbs"><a href="/">Home</a> / <span>Models</span></div>
+    <div class="eyebrow">The Range</div>
+    <h1 class="h-lg">Every Volkswagen<br>we put our name to.</h1>
+    <p class="lede">Seven cars, one standard. Filter by body style, price or powertrain â€” every result is served live from the Elite Motors API.</p>
+  </div>
+</header>
+
+<section class="section" style="padding-top:clamp(40px,6vw,70px)">
+  <div class="wrap">
+
+    <!-- controls -->
+    <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;margin-bottom:34px" data-reveal>
+      <div style="flex:1;min-width:260px">
+        <div class="field" style="margin:0">
+          <label for="q">Search the range</label>
+          <input id="q" type="search" placeholder="Try â€œGTIâ€, â€œSUVâ€, â€œ7 seaterâ€â€¦" autocomplete="off">
+        </div>
+      </div>
+      <div style="min-width:200px">
+        <div class="field" style="margin:0">
+          <label for="sort">Sort by</label>
+          <select id="sort">
+            <option value="default">Featured</option>
+            <option value="price_asc">Price â€” low to high</option>
+            <option value="price_desc">Price â€” high to low</option>
+            <option value="name">Name â€” A to Z</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="pills" id="filters" style="margin-bottom:14px" data-reveal></div>
+
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:18px 0 30px;border-bottom:1px solid var(--line);margin-bottom:36px">
+      <span class="mono dim" id="resultCount" style="font-size:.74rem;letter-spacing:.18em;text-transform:uppercase">Loadingâ€¦</span>
+      <button class="tlink" id="clearBtn" style="display:none">Clear filters</button>
+    </div>
+
+    <div class="grid g-3" id="grid"></div>
+  </div>
+</section>
+
+<!-- compare strip -->
+<section class="section" style="background:var(--ink-1);border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="section-head center" data-reveal>
+      <div class="eyebrow center">Side by side</div>
+      <h2 class="h-md">Compare the range at a glance.</h2>
+    </div>
+    <div style="overflow-x:auto;border:1px solid var(--line);border-radius:var(--r-lg)" data-reveal>
+      <table style="width:100%;border-collapse:collapse;min-width:820px" id="compare"></table>
+    </div>
+  </div>
+</section>
+
+<section class="section center">
+  <div class="wrap">
+    <h2 class="h-md" data-reveal>Found the one?</h2>
+    <p class="lede" style="margin:18px auto 32px" data-reveal>Book a test drive at Hosur Road and we'll have it ready, charged and cleaned.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap" data-reveal>
+      <a class="btn btn-lg" href="/contact.html#test-drive">Book a Test Drive</a>
+      <a class="btn btn-lg btn-ghost" href="/finance.html">Calculate My EMI</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script src="/assets/js/core.js"></script>
+<script>
+(async function () {
+  const $ = (s) => document.querySelector(s);
+  const grid = $('#grid');
+  const state = { q: '', body: 'all', sort: 'default' };
+
+  grid.innerHTML = Array.from({ length: 6 }, () => '<div class="skel skel-card"></div>').join('');
+
+  function card(m, i) {
+    return `<article class="card mcard tilt" data-reveal style="--d:${(i % 3) * 80}ms">
+      <div class="mcard-media">
+        ${m.badge ? `<span class="badge">${Elite.esc(m.badge)}</span>` : ''}
+        <img src="${m.hero_image}" alt="${Elite.esc(m.name)}" loading="lazy">
+      </div>
+      <div class="mcard-body">
+        <div class="mcard-type">${Elite.esc(m.body_type)} Â· ${m.seats ?? 5} Seater Â· ${Elite.esc(m.specs.fuel)}</div>
+        <h3 class="mcard-name">${Elite.esc(m.name)}</h3>
+        <p class="mcard-tag">${Elite.esc(m.tagline)}</p>
+        <div class="mcard-specs">
+          <div class="mcard-spec"><b>${Elite.esc(m.specs.power)}</b><span>Power</span></div>
+          <div class="mcard-spec"><b>${Elite.esc(m.specs.torque)}</b><span>Torque</span></div>
+          <div class="mcard-spec"><b>${Elite.esc(m.specs.drivetrain)}</b><span>Drive</span></div>
+        </div>
+        <div class="mcard-foot">
+          <div>
+            <div class="price-l">Starting at</div>
+            <div class="price-v">${Elite.priceLabel(m.price)}</div>
+          </div>
+          <a class="btn btn-sm" href="/model.html?slug=${m.slug}">Explore</a>
+        </div>
+      </div>
+    </article>`;
+  }
+
+  async function load() {
+    const p = new URLSearchParams();
+    if (state.q) p.set('q', state.q);
+    if (state.body !== 'all') p.set('body_type', state.body);
+    if (state.sort !== 'default') p.set('sort', state.sort);
+
+    try {
+      const res = await Elite.get('/cars' + (p.toString() ? '?' + p : ''));
+      $('#resultCount').textContent = `${res.total} model${res.total === 1 ? '' : 's'}`;
+      $('#clearBtn').style.display = (state.q || state.body !== 'all' || state.sort !== 'default') ? '' : 'none';
+      grid.innerHTML = res.items.length
+        ? res.items.map(card).join('')
+        : `<div class="empty" style="grid-column:1/-1"><h3>No models match that</h3><p>Try clearing the filters or searching for something broader.</p></div>`;
+      Elite.reveal(grid);
+      Elite.tilt(grid);
+    } catch (e) {
+      grid.innerHTML = '<div class="empty" style="grid-column:1/-1"><h3>Could not reach the API</h3><p>Make sure the server is running, then refresh.</p></div>';
+    }
+  }
+
+  // filters
+  try {
+    const { items } = await Elite.get('/cars');
+    const bodies = ['all', ...new Set(items.map((m) => m.body_type))];
+    $('#filters').innerHTML = bodies.map((b, i) =>
+      `<button class="pill${i === 0 ? ' on' : ''}" data-body="${Elite.esc(b)}">${b === 'all' ? 'All' : Elite.esc(b)}</button>`).join('');
+
+    // comparison table
+    const rows = [
+      ['Model', (m) => `<a href="/model.html?slug=${m.slug}" style="color:var(--blue)">${Elite.esc(m.name)}</a>`],
+      ['Body', (m) => Elite.esc(m.body_type)],
+      ['Engine', (m) => Elite.esc(m.specs.engine)],
+      ['Power', (m) => Elite.esc(m.specs.power)],
+      ['Torque', (m) => Elite.esc(m.specs.torque)],
+      ['Gearbox', (m) => Elite.esc(m.specs.transmission)],
+      ['Drive', (m) => Elite.esc(m.specs.drivetrain)],
+      ['Seats', (m) => m.seats],
+      ['Price', (m) => Elite.priceLabel(m.price)],
+    ];
+    $('#compare').innerHTML = rows.map(([label, fn], ri) => `
+      <tr style="border-bottom:1px solid var(--line)">
+        <th style="text-align:left;padding:15px 20px;background:var(--ink-2);font-family:var(--mono);font-size:0.70rem;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-3);font-weight:400;white-space:nowrap;position:sticky;left:0">${label}</th>
+        ${items.map((m) => `<td style="padding:15px 20px;font-size:.88rem;${ri === 0 ? 'font-family:var(--display);font-weight:700;' : 'color:var(--fg-2);'}white-space:nowrap">${fn(m)}</td>`).join('')}
+      </tr>`).join('');
+  } catch (e) { console.warn(e); }
+
+  $('#filters').addEventListener('click', (e) => {
+    const pill = e.target.closest('.pill');
+    if (!pill) return;
+    $('#filters').querySelectorAll('.pill').forEach((p) => p.classList.remove('on'));
+    pill.classList.add('on');
+    state.body = pill.dataset.body;
+    load();
+  });
+
+  let t;
+  $('#q').addEventListener('input', (e) => {
+    clearTimeout(t);
+    t = setTimeout(() => { state.q = e.target.value.trim(); load(); }, 260);
+  });
+
+  $('#sort').addEventListener('change', (e) => { state.sort = e.target.value; load(); });
+
+  $('#clearBtn').addEventListener('click', () => {
+    state.q = ''; state.body = 'all'; state.sort = 'default';
+    $('#q').value = ''; $('#sort').value = 'default';
+    $('#filters').querySelectorAll('.pill').forEach((p, i) => p.classList.toggle('on', i === 0));
+    load();
+  });
+
+  load();
+})();
+</script>
+</body>
+</html>

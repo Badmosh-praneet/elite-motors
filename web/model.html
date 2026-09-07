@@ -1,0 +1,385 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Model â€” Volkswagen Elite Motors</title>
+<meta name="description" content="Full specifications, features, colours and gallery for every Volkswagen at Elite Motors Bengaluru.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/elite.css">
+<link rel="icon" type="image/png" href="/assets/img/vw-logo.png">
+<style>
+  .m-hero {
+    position: relative;
+    padding: calc(var(--nav-h) + clamp(40px,6vw,80px)) 0 clamp(40px,6vw,70px);
+    overflow: hidden;
+    isolation: isolate;
+    border-bottom: 1px solid var(--line);
+    transition: background .9s var(--ease);
+  }
+  .m-hero::before {
+    content:''; position:absolute; inset:0; z-index:-1;
+    background: radial-gradient(70% 90% at 72% 42%, var(--tint, rgba(0,176,240,.2)), transparent 66%),
+                radial-gradient(60% 90% at 4% 100%, rgba(0,30,80,.5), transparent 68%);
+    transition: background .9s var(--ease);
+  }
+  .m-hero-grid { display:grid; grid-template-columns: 1fr 1.15fr; gap: clamp(26px,4vw,60px); align-items:center; }
+  .m-shot { position:relative; }
+  .m-shot img { width:100%; aspect-ratio:16/11; object-fit:contain; filter: drop-shadow(0 40px 60px rgba(0,0,0,.6)); }
+  .m-shot::after {
+    content:''; position:absolute; left:8%; right:8%; bottom:6%; height:34px;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(0,0,0,.7), transparent 72%);
+    filter: blur(10px); z-index:-1;
+  }
+  @media (max-width: 900px){ .m-hero-grid { grid-template-columns:1fr; } }
+  /* clear both the site header and the sticky section nav when jumping to an anchor */
+  html { scroll-padding-top: 150px; }
+</style>
+</head>
+<body>
+
+<main id="app">
+  <header class="phead"><div class="wrap"><h1 class="h-lg">Loadingâ€¦</h1></div></header>
+</main>
+
+<script src="/assets/js/core.js"></script>
+<script>
+(async function () {
+  const app = document.getElementById('app');
+  const slug = new URLSearchParams(location.search).get('slug');
+
+  if (!slug) { location.replace('/models.html'); return; }
+
+  let m;
+  try {
+    m = await Elite.get('/cars/' + encodeURIComponent(slug));
+  } catch (err) {
+    app.innerHTML = `<header class="phead"><div class="wrap">
+      <div class="crumbs"><a href="/">Home</a> / <a href="/models.html">Models</a> / <span>Not found</span></div>
+      <h1 class="h-lg">We don't have that one.</h1>
+      <p class="lede">${Elite.esc(err.message)}</p>
+      <a class="btn" style="margin-top:28px" href="/models.html">Back to all models</a>
+    </div></header>`;
+    return;
+  }
+
+  document.title = `${m.name} â€” Volkswagen Elite Motors`;
+
+  const specOrder = [
+    ['engine', 'Engine'], ['power', 'Power'], ['torque', 'Torque'],
+    ['transmission', 'Transmission'], ['drivetrain', 'Drivetrain'], ['fuel', 'Fuel'],
+    ['zero_to_hundred', '0â€“100 km/h'], ['mileage_record', 'Efficiency'],
+    ['seating', 'Seating'], ['boot', 'Boot'],
+  ].filter(([k]) => m.specs[k]);
+
+  const featureGroups = Object.entries(m.features || {});
+
+  app.innerHTML = `
+  <!-- hero -->
+  <header class="m-hero" id="mHero">
+    <div class="wrap">
+      <div class="crumbs"><a href="/">Home</a> / <a href="/models.html">Models</a> / <span>${Elite.esc(m.name)}</span></div>
+      <div class="m-hero-grid">
+        <div>
+          <div class="eyebrow">${Elite.esc(m.body_type)} Â· ${Elite.esc(m.variant_label)}</div>
+          <h1 class="h-lg" style="margin:16px 0 18px">${Elite.esc(m.name)}</h1>
+          <p class="lede" style="margin-bottom:26px">${Elite.esc(m.tagline)}</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px">
+            ${m.badge ? `<span class="chip"><i></i> ${Elite.esc(m.badge)}</span>` : ''}
+            <span class="chip"><i></i> ${m.seats} Seater</span>
+            <span class="chip"><i></i> ${Elite.esc(m.specs.fuel)}</span>
+          </div>
+          <div style="display:flex;align-items:flex-end;gap:26px;flex-wrap:wrap;margin-bottom:32px">
+            <div>
+              <div class="price-l">Starting at</div>
+              <div style="font-family:var(--display);font-weight:800;font-size:clamp(1.8rem,3.4vw,2.6rem);letter-spacing:-.04em;margin-top:4px">${Elite.priceLabel(m.price)}</div>
+              <div class="dim mono" style="font-size:0.70rem;letter-spacing:.14em;margin-top:6px">${Elite.esc(m.price.note)}</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <a class="btn" href="#book">Book a Test Drive ${Elite.ICON.arrow}</a>
+            <a class="btn btn-ghost" href="/finance.html?model=${m.slug}">Calculate EMI</a>
+          </div>
+        </div>
+        <div class="m-shot">
+          <img id="mShot" src="${m.hero_image}" alt="${Elite.esc(m.name)}">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- section nav -->
+  <nav class="mnav" id="mnav" aria-label="Sections of this page">
+    <div class="wrap mnav-inner">
+      <div class="mnav-links">
+        <a href="#specs">Specs</a>
+        <a href="#overview">Overview</a>
+        <a href="#variants">Variants</a>
+        ${featureGroups.length ? '<a href="#features">Features</a>' : ''}
+        ${m.gallery && m.gallery.length ? '<a href="#gallery">Gallery</a>' : ''}
+        ${m.faqs && m.faqs.length ? '<a href="#faqs">FAQs</a>' : ''}
+      </div>
+      <a class="btn btn-sm mnav-cta" href="#book">Book a Test Drive</a>
+    </div>
+  </nav>
+
+  <!-- key specs -->
+  <section class="section" id="specs" style="padding-block:clamp(46px,6vw,80px)">
+    <div class="wrap">
+      <div class="spec-grid" data-reveal>
+        ${specOrder.map(([k, label]) => `<div class="spec-cell"><dt>${label}</dt><dd>${Elite.esc(m.specs[k])}</dd></div>`).join('')}
+      </div>
+    </div>
+  </section>
+
+  <!-- overview -->
+  <section class="section" id="overview" style="background:var(--ink-1);border-block:1px solid var(--line)">
+    <div class="wrap split">
+      <div data-reveal="left">
+        <div class="eyebrow">Overview</div>
+        <h2 class="h-md" style="margin:18px 0 22px">${Elite.esc(m.tagline)}</h2>
+        <p class="lede" style="margin-bottom:30px">${Elite.esc(m.description)}</p>
+        <ul class="ticks">${m.highlights.map((h) => `<li>${Elite.esc(h)}</li>`).join('')}</ul>
+        <a class="tlink" style="margin-top:30px" href="#variants">See all ${m.variants.length} variants ${Elite.ICON.arrow}</a>
+      </div>
+      <div data-reveal="right">
+        <div style="border-radius:var(--r-xl);overflow:hidden;border:1px solid var(--line)">
+          <img src="${m.intro_image}" alt="${Elite.esc(m.name)} detail" style="width:100%;aspect-ratio:4/3;object-fit:cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- colours -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <div class="eyebrow">Paint</div>
+        <h2 class="h-md" style="margin-top:16px">Choose your finish.</h2>
+      </div>
+      <div style="display:flex;gap:34px;flex-wrap:wrap;align-items:center" data-reveal>
+        <div class="swatches" id="swatches">
+          ${m.colors.map((c, i) => `<button class="swatch${i === 0 ? ' on' : ''}" data-hex="${c.hex}" data-name="${Elite.esc(c.name)}" style="background:${c.hex}" title="${Elite.esc(c.name)}" aria-label="${Elite.esc(c.name)}"></button>`).join('')}
+        </div>
+        <div>
+          <div class="price-l">Selected</div>
+          <div id="colorName" style="font-family:var(--display);font-weight:800;font-size:1.45rem;letter-spacing:-.03em;margin-top:4px">${Elite.esc(m.colors[0].name)}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- variants -->
+  <section class="section" id="variants" style="background:var(--ink-1);border-block:1px solid var(--line)">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <div class="eyebrow">Variants</div>
+        <h2 class="h-md" style="margin-top:16px">${m.variants.length} way${m.variants.length === 1 ? '' : 's'} to have it.</h2>
+        <p class="lede">Every variant Elite Motors stocks, cheapest first. Prices are indicative ex-showroom Bengaluru.</p>
+      </div>
+      <div style="overflow-x:auto;border:1px solid var(--line);border-radius:var(--r-lg)" data-reveal>
+        <table style="width:100%;border-collapse:collapse;min-width:760px">
+          <thead><tr style="background:var(--ink-2);border-bottom:1px solid var(--line)">
+            ${['Variant', 'Engine', 'Power', 'Gearbox', 'Price', ''].map((h) =>
+              `<th style="text-align:left;padding:14px 20px;font-family:var(--mono);font-size:0.70rem;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-3);font-weight:400;white-space:nowrap">${h}</th>`).join('')}
+          </tr></thead>
+          <tbody>
+            ${[...m.variants].sort((a, b) => a.price - b.price).map((v) => `
+              <tr style="border-bottom:1px solid var(--line)">
+                <td style="padding:15px 20px;font-family:var(--display);font-weight:700;font-size:.94rem;white-space:nowrap">${Elite.esc(v.name)}
+                  <span class="chip" style="margin-left:8px;padding:3px 9px;font-size:0.70rem">${Elite.esc(v.trim)}</span></td>
+                <td style="padding:15px 20px;font-size:.86rem;color:var(--fg-2);white-space:nowrap">${Elite.esc(v.engine)}</td>
+                <td style="padding:15px 20px;font-size:.86rem;color:var(--fg-2);white-space:nowrap">${Elite.esc(v.power)}</td>
+                <td style="padding:15px 20px;font-size:.86rem;color:var(--fg-2);white-space:nowrap">${Elite.esc(v.transmission)}</td>
+                <td style="padding:15px 20px;font-family:var(--display);font-weight:800;color:var(--blue);white-space:nowrap">${Elite.inr(v.price)}</td>
+                <td style="padding:15px 20px"><a class="btn btn-sm btn-ghost" href="/finance.html?model=${m.slug}">EMI</a></td>
+              </tr>`).join('')}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- features -->
+  ${featureGroups.length ? `
+  <section class="section" id="features" style="background:var(--ink-1);border-block:1px solid var(--line)">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <div class="eyebrow">Specification</div>
+        <h2 class="h-md" style="margin-top:16px">Everything on board.</h2>
+      </div>
+      <div data-reveal>
+        ${featureGroups.map(([group, list], i) => `
+          <div class="acc-item${i === 0 ? ' open' : ''}">
+            <button class="acc-head">${Elite.esc(group)} <span class="acc-ico">${Elite.ICON.plus}</span></button>
+            <div class="acc-body"><div><ul>${list.map((f) => `<li>${Elite.esc(f)}</li>`).join('')}</ul></div></div>
+          </div>`).join('')}
+      </div>
+    </div>
+  </section>` : ''}
+
+  <!-- gallery -->
+  ${m.gallery && m.gallery.length ? `
+  <section class="section" id="gallery">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <div class="eyebrow">Gallery</div>
+        <h2 class="h-md" style="margin-top:16px">See it properly.</h2>
+      </div>
+      <div class="gal" id="gal" data-reveal>
+        ${m.gallery.map((src, i) => `<button type="button" class="gal-item" data-i="${i}" aria-label="View ${Elite.esc(m.name)} image ${i + 1} of ${m.gallery.length}"><img src="${src}" alt="" loading="lazy"></button>`).join('')}
+      </div>
+    </div>
+  </section>` : ''}
+
+  <!-- faqs -->
+  ${m.faqs && m.faqs.length ? `
+  <section class="section" id="faqs" style="background:var(--ink-1);border-block:1px solid var(--line)">
+    <div class="wrap" style="max-width:900px">
+      <div class="section-head" data-reveal>
+        <div class="eyebrow">Questions</div>
+        <h2 class="h-md" style="margin-top:16px">${Elite.esc(m.name)}, answered.</h2>
+      </div>
+      <div data-reveal>
+        ${m.faqs.map((f, i) => `
+          <div class="acc-item${i === 0 ? ' open' : ''}">
+            <button class="acc-head">${Elite.esc(f.question)} <span class="acc-ico">${Elite.ICON.plus}</span></button>
+            <div class="acc-body"><div><p>${Elite.esc(f.answer)}</p></div></div>
+          </div>`).join('')}
+      </div>
+    </div>
+  </section>` : ''}
+
+  <!-- book -->
+  <section class="section" id="book" style="background:var(--ink-1);border-top:1px solid var(--line)">
+    <div class="wrap split">
+      <div data-reveal="left">
+        <div class="eyebrow">Test Drive</div>
+        <h2 class="h-lg" style="margin:18px 0 22px">Drive the ${Elite.esc(m.name)}.</h2>
+        <p class="lede" style="margin-bottom:30px">Tell us when suits you. A Sales Consultant will confirm the slot and have the car ready at Hosur Road.</p>
+        <ul class="ticks">
+          <li>No obligation, no pressure</li>
+          <li>Planned route that actually shows the car off</li>
+          <li>Home or office pick-up on request</li>
+        </ul>
+      </div>
+      <div data-reveal="right">
+        <form class="card" id="tdForm" style="padding:clamp(26px,3.4vw,38px)" novalidate>
+          <div class="form-grid">
+            <div class="field"><label for="fn">First Name*</label><input id="fn" name="first_name" required></div>
+            <div class="field"><label for="ln">Last Name*</label><input id="ln" name="last_name" required></div>
+            <div class="field"><label for="em">Email*</label><input id="em" name="email" type="email" required></div>
+            <div class="field"><label for="mo">Mobile*</label><input id="mo" name="mobile" type="tel" required></div>
+            <div class="field full"><label for="md">Model*</label><input id="md" name="model" value="${Elite.esc(m.name)}" readonly></div>
+            <div class="field full"><label for="pd">Preferred Date</label><input id="pd" name="preferred_date" type="date"></div>
+          </div>
+          <button class="btn btn-block" type="submit">Request Test Drive ${Elite.ICON.arrow}</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- related -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <div class="eyebrow">Also consider</div>
+        <h2 class="h-md" style="margin-top:16px">Other cars on the floor.</h2>
+      </div>
+      <div class="grid g-3" id="related"></div>
+    </div>
+  </section>`;
+
+  Elite.reveal();
+  Elite.accordion();
+
+
+  /* section nav: highlight whichever section is in view */
+  const mnav = document.getElementById('mnav');
+  if (mnav) {
+    const links = [...mnav.querySelectorAll('.mnav-links a')];
+    const targets = links
+      .map((a) => ({ a, el: document.querySelector(a.getAttribute('href')) }))
+      .filter((t) => t.el);
+
+    const mark = (active) => links.forEach((a) => {
+      const on = a === active;
+      a.classList.toggle('on', on);
+      if (on) a.setAttribute('aria-current', 'true');
+      else a.removeAttribute('aria-current');
+    });
+
+    if ('IntersectionObserver' in window) {
+      const seen = new Map();
+      const spy = new IntersectionObserver((entries) => {
+        entries.forEach((e) => seen.set(e.target, e.intersectionRatio));
+        let best = null, ratio = 0;
+        targets.forEach((t) => {
+          const r = seen.get(t.el) || 0;
+          if (r > ratio) { ratio = r; best = t.a; }
+        });
+        if (best) mark(best);
+      }, { threshold: [0.15, 0.4, 0.75], rootMargin: '-20% 0px -55% 0px' });
+      targets.forEach((t) => spy.observe(t.el));
+    }
+  }
+
+  /* colour switcher â€” tints the hero backdrop */
+  const hero = document.getElementById('mHero');
+  const swatches = document.getElementById('swatches');
+  function tint(hex) {
+    const r = parseInt(hex.slice(1, 3), 16), g = parseInt(hex.slice(3, 5), 16), b = parseInt(hex.slice(5, 7), 16);
+    hero.style.setProperty('--tint', `rgba(${r},${g},${b},.34)`);
+  }
+  tint(m.colors[0].hex);
+  swatches.addEventListener('click', (e) => {
+    const sw = e.target.closest('.swatch');
+    if (!sw) return;
+    swatches.querySelectorAll('.swatch').forEach((s) => s.classList.remove('on'));
+    sw.classList.add('on');
+    document.getElementById('colorName').textContent = sw.dataset.name;
+    tint(sw.dataset.hex);
+  });
+
+  /* gallery lightbox */
+  const gal = document.getElementById('gal');
+  if (gal) {
+    const open = Elite.lightbox(m.gallery, m.name);
+    gal.addEventListener('click', (e) => {
+      const item = e.target.closest('.gal-item');
+      if (item) open(+item.dataset.i);
+    });
+  }
+
+  /* test drive form */
+  Elite.bindForm(document.getElementById('tdForm'), '/leads/test-drive');
+
+  /* related models */
+  try {
+    const { items } = await Elite.get('/cars');
+    const others = items.filter((x) => x.slug !== m.slug).slice(0, 3);
+    document.getElementById('related').innerHTML = others.map((x, i) => `
+      <article class="card mcard tilt" data-reveal style="--d:${i * 80}ms">
+        <div class="mcard-media">
+          ${x.badge ? `<span class="badge">${Elite.esc(x.badge)}</span>` : ''}
+          <img src="${x.hero_image}" alt="${Elite.esc(x.name)}" loading="lazy">
+        </div>
+        <div class="mcard-body">
+          <div class="mcard-type">${Elite.esc(x.body_type)}</div>
+          <h3 class="mcard-name">${Elite.esc(x.name)}</h3>
+          <p class="mcard-tag">${Elite.esc(x.tagline)}</p>
+          <div class="mcard-foot">
+            <div><div class="price-l">From</div><div class="price-v">${Elite.priceLabel(x.price)}</div></div>
+            <a class="btn btn-sm" href="/model.html?slug=${x.slug}">Explore</a>
+          </div>
+        </div>
+      </article>`).join('');
+    Elite.reveal(document.getElementById('related'));
+    Elite.tilt(document.getElementById('related'));
+  } catch (e) { console.warn(e); }
+})();
+</script>
+</body>
+</html>

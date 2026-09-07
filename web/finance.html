@@ -1,0 +1,221 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Finance Calculator â€” Volkswagen Elite Motors</title>
+<meta name="description" content="Calculate your Volkswagen EMI. Pick a model, set your down payment, rate and tenure â€” computed live by the Elite Motors API.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/elite.css">
+<link rel="icon" type="image/png" href="/assets/img/vw-logo.png">
+<script>
+  (function () {
+    var w = window;
+    w.Perfox = w.Perfox || function () {
+      (w.Perfox.q = w.Perfox.q || []).push(arguments);
+    };
+  })();
+</script>
+<script src="https://skill-mine-api.perfox.ai/widget/v1/widget.js"
+        data-site="sa_site_live_1Y359MWPZR04A7VVD44KYZ24TN7BPWZT"
+        defer></script>
+</head>
+<body>
+<main id="main" tabindex="-1">
+
+<header class="phead finance">
+  <div class="wrap">
+    <div class="crumbs"><a href="/">Home</a> / <span>Finance</span></div>
+    <div class="eyebrow">Finance Calculator</div>
+    <h1 class="h-lg">Know your EMI<br>before you walk in.</h1>
+    <p class="lede">Pick a model, move the sliders. Every figure is computed live by the Elite Motors API on a standard reducing-balance basis.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <div class="split" style="align-items:start">
+
+      <!-- controls -->
+      <div data-reveal="left">
+        <div class="field">
+          <label for="modelPick">Choose a model</label>
+          <select id="modelPick"><option value="">Custom amount</option></select>
+        </div>
+
+        <div id="modelCard" style="display:none;margin-bottom:30px"></div>
+
+        <div class="range-row">
+          <div class="range-top"><span class="range-lab">Vehicle Price</span><span class="range-val" id="vPrice">â‚¹15.00 L</span></div>
+          <input type="range" id="rPrice" min="300000" max="8000000" step="25000" value="1500000">
+        </div>
+        <div class="range-row">
+          <div class="range-top"><span class="range-lab">Down Payment</span><span class="range-val" id="vDown">â‚¹3.00 L</span></div>
+          <input type="range" id="rDown" min="0" max="4000000" step="25000" value="300000">
+          <div class="dim mono" id="downPct" style="font-size:0.70rem;letter-spacing:.14em;margin-top:8px">20% of vehicle price</div>
+        </div>
+        <div class="range-row">
+          <div class="range-top"><span class="range-lab">Interest Rate</span><span class="range-val" id="vRate">9.25%</span></div>
+          <input type="range" id="rRate" min="6" max="18" step="0.05" value="9.25">
+        </div>
+        <div class="range-row">
+          <div class="range-top"><span class="range-lab">Tenure</span><span class="range-val" id="vTenure">60 months</span></div>
+          <input type="range" id="rTenure" min="12" max="84" step="6" value="60">
+        </div>
+
+        <div class="card" style="padding:24px;margin-top:10px">
+          <div class="ocard-type" id="partnerIco"></div>
+          <p class="muted" style="font-size:.88rem;margin-bottom:16px">We work with every major lender, so you get the sharpest rate rather than the only rate.</p>
+          <div class="pills" id="partners"></div>
+        </div>
+      </div>
+
+      <!-- result -->
+      <div data-reveal="right" style="position:sticky;top:calc(var(--nav-h) + 20px)">
+        <div class="emi-panel">
+          <div class="donut">
+            <svg viewBox="0 0 210 210">
+              <circle class="track" cx="105" cy="105" r="88"/>
+              <circle class="arc" id="emiArc" cx="105" cy="105" r="88" stroke-dasharray="553" stroke-dashoffset="553"/>
+            </svg>
+            <div class="donut-mid"><b id="emiValue">â€”</b><span>Per month</span></div>
+          </div>
+          <div class="emi-rows">
+            <div class="emi-row"><span>Loan amount</span><b id="emiLoan">â€”</b></div>
+            <div class="emi-row"><span>Down payment</span><b id="emiDown">â€”</b></div>
+            <div class="emi-row"><span>Total interest</span><b id="emiInterest">â€”</b></div>
+            <div class="emi-row"><span>Total payable</span><b id="emiTotal">â€”</b></div>
+          </div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px">
+            <a class="btn btn-block" href="/contact.html#test-drive">Talk to a Finance Advisor</a>
+          </div>
+          <p class="disclaimer" style="padding:18px 0 0;margin:0">Indicative only. Final rates depend on credit profile, tenure and the lending partner. Not an offer of credit.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- schedule -->
+<section class="section" style="background:var(--ink-1);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <div class="eyebrow">Repayment</div>
+      <h2 class="h-md" style="margin-top:16px">Your first year, month by month.</h2>
+      <p class="lede">How each instalment splits between interest and principal.</p>
+    </div>
+    <div style="overflow-x:auto;border:1px solid var(--line);border-radius:var(--r-lg)" data-reveal>
+      <table style="width:100%;border-collapse:collapse;min-width:640px" id="schedule"></table>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script src="/assets/js/core.js"></script>
+<script>
+(async function () {
+  const $ = (s) => document.querySelector(s);
+  const rPrice = $('#rPrice'), rDown = $('#rDown'), rRate = $('#rRate'), rTenure = $('#rTenure');
+  let models = [];
+
+  /* models + partners */
+  try {
+    const cfg = await Elite.get('/finance');
+    rRate.value = cfg.defaults.rate;
+    rTenure.value = cfg.defaults.tenure_months;
+    $('#partnerIco').innerHTML = `${Elite.ICON.shield} Lending Partners`;
+    $('#partners').innerHTML = cfg.partners.map((p) => `<span class="chip">${Elite.esc(p)}</span>`).join('');
+  } catch (e) { console.warn(e); }
+
+  try {
+    const res = await Elite.get('/cars');
+    models = res.items;
+    $('#modelPick').insertAdjacentHTML('beforeend',
+      models.map((m) => `<option value="${m.slug}">${Elite.esc(m.name)} â€” from ${Elite.inr(m.price.min)}</option>`).join(''));
+  } catch (e) { console.warn(e); }
+
+  function pickModel(slug) {
+    const m = models.find((x) => x.slug === slug);
+    const box = $('#modelCard');
+    if (!m) { box.style.display = 'none'; return; }
+    box.style.display = '';
+    box.innerHTML = `<div class="card" style="padding:18px;display:flex;gap:16px;align-items:center">
+      <img src="${m.hero_image}" alt="${Elite.esc(m.name)}" style="width:110px;flex-shrink:0;object-fit:contain">
+      <div>
+        <b style="display:block;font-family:var(--display);font-size:1.1rem;letter-spacing:-.02em">${Elite.esc(m.name)}</b>
+        <span class="mono dim" style="font-size:0.70rem;letter-spacing:.12em">${Elite.esc(m.specs.engine)} Â· ${Elite.esc(m.specs.power)}</span>
+        <div style="font-family:var(--display);font-weight:800;color:var(--blue);margin-top:6px">${Elite.priceLabel(m.price)}</div>
+      </div>
+    </div>`;
+    rPrice.value = String(m.price.min);
+    rDown.value = String(Math.round(m.price.min * 0.2 / 25000) * 25000);
+    update();
+  }
+
+  $('#modelPick').addEventListener('change', (e) => {
+    if (e.target.value) pickModel(e.target.value);
+    else { $('#modelCard').style.display = 'none'; }
+  });
+
+  function labels() {
+    const price = +rPrice.value;
+    if (+rDown.value >= price) rDown.value = String(Math.max(0, price - 25000));
+    rDown.max = String(Math.round(price * 0.8));
+    $('#vPrice').textContent = Elite.inr(price);
+    $('#vDown').textContent = Elite.inr(+rDown.value);
+    $('#vRate').textContent = (+rRate.value).toFixed(2) + '%';
+    $('#vTenure').textContent = rTenure.value + ' months';
+    $('#downPct').textContent = `${Math.round((+rDown.value / price) * 100)}% of vehicle price`;
+  }
+
+  let t;
+  async function calc() {
+    try {
+      const r = await Elite.post('/finance/emi', {
+        principal: +rPrice.value,
+        down_payment: +rDown.value,
+        rate: +rRate.value,
+        tenure_months: +rTenure.value,
+      });
+      $('#emiValue').textContent = Elite.inrFull(r.monthly_emi);
+      $('#emiLoan').textContent = Elite.inrFull(r.principal);
+      $('#emiDown').textContent = Elite.inrFull(+rDown.value);
+      $('#emiInterest').textContent = Elite.inrFull(r.total_interest);
+      $('#emiTotal').textContent = Elite.inrFull(r.total_payable);
+      $('#emiArc').style.strokeDashoffset = String(553 - 553 * (r.principal / r.total_payable));
+
+      $('#schedule').innerHTML = `
+        <thead><tr style="border-bottom:1px solid var(--line);background:var(--ink-2)">
+          ${['Month', 'EMI', 'Interest', 'Principal', 'Balance'].map((h) =>
+            `<th style="text-align:left;padding:14px 20px;font-family:var(--mono);font-size:0.70rem;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-3);font-weight:400">${h}</th>`).join('')}
+        </tr></thead>
+        <tbody>${r.schedule_preview.map((row) => `
+          <tr style="border-bottom:1px solid var(--line)">
+            <td style="padding:13px 20px;font-family:var(--mono);font-size:.78rem;color:var(--blue)">${String(row.month).padStart(2, '0')}</td>
+            <td style="padding:13px 20px;font-size:.86rem">${Elite.inrFull(row.emi)}</td>
+            <td style="padding:13px 20px;font-size:.86rem;color:var(--fg-2)">${Elite.inrFull(row.interest)}</td>
+            <td style="padding:13px 20px;font-size:.86rem;color:var(--fg-2)">${Elite.inrFull(row.principal)}</td>
+            <td style="padding:13px 20px;font-size:.86rem;font-family:var(--display);font-weight:700">${Elite.inrFull(row.balance)}</td>
+          </tr>`).join('')}</tbody>`;
+    } catch (e) { console.warn('emi', e); }
+  }
+
+  function update() { labels(); clearTimeout(t); t = setTimeout(calc, 130); }
+
+  [rPrice, rDown, rRate, rTenure].forEach((el) => el.addEventListener('input', update));
+
+  const preset = new URLSearchParams(location.search).get('model');
+  if (preset && models.some((m) => m.slug === preset)) {
+    $('#modelPick').value = preset;
+    pickModel(preset);
+  } else {
+    labels();
+    calc();
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1811 @@
+{
+  "meta": {
+    "client": "Elite Motors",
+    "brand": "Volkswagen",
+    "display_name": "Volkswagen Elite Motors",
+    "source_url": "https://www.volkswagenbangalore.in/",
+    "scraped_pages": [
+      "/",
+      "/about-us",
+      "/models",
+      "/outlets",
+      "/service",
+      "/insurance",
+      "/careers",
+      "/finance-calculator",
+      "/service-value-package",
+      "/roadside-assistance",
+      "/extended-warranty",
+      "/booking",
+      "/contact-us",
+      "/tayron-r-line",
+      "/golf-gti",
+      "/tiguan-r-line",
+      "/virtus-sport",
+      "/virtus-chrome",
+      "/taigun-sport",
+      "/taigun-chrome"
+    ],
+    "api_version": "v2",
+    "notes": "Content and imagery scraped from the live Volkswagen Bangalore (Elite Motors) site. Model and variant pricing is indicative ex-showroom Bengaluru — the source site does not publish prices. FAQ answers are composed from facts scraped from that site."
+  },
+  "dealer": {
+    "id": "elite-motors-blr",
+    "legal_name": "Elite Motors",
+    "trading_as": "Volkswagen Elite Motors",
+    "brand": "Volkswagen",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "country": "India",
+    "tagline": "Precision German engineering, delivered with elite care.",
+    "authorised": true,
+    "about": {
+      "headline": "An authorised Volkswagen dealership, engineered around you.",
+      "paragraphs": [
+        "Volkswagen Elite Motors is an authorised Volkswagen dealership located in Bangalore, India. Within a short period of time the dealership firm has done outstanding business and won the trust of its valued customers. Located strategically near Hosur Road junction, the dealership is easily accessible to auto consumers. We have new locations that are coming up in South Bangalore as well.",
+        "Elite Motors features a state-of-the-art auto showroom with a wide range of brand new and second-hand Volkswagen cars.",
+        "The dealership also provides Insurance and Finance solutions, special offers, Service & Repair facilities along with Test drives. Founded with the vision to deliver highest level of customer satisfaction, Elite Motors is supported by highly-skilled teams who work hard relentlessly to deliver superior customer service."
+      ]
+    },
+    "contact": {
+      "phone": "080 4013 8004",
+      "phone_e164": "+918040138004",
+      "sales_email": "crm@vw-elitemotors.co.in",
+      "service_email": "crhead@vw-elitemotors.co.in",
+      "whatsapp": "+918040138004"
+    },
+    "hours": {
+      "sales": [
+        {
+          "days": "Mon - Sat",
+          "open": "09:45",
+          "close": "19:10"
+        },
+        {
+          "days": "Sun",
+          "open": "10:00",
+          "close": "19:10"
+        }
+      ],
+      "service": [
+        {
+          "days": "Mon - Sat",
+          "open": "08:45",
+          "close": "18:30"
+        },
+        {
+          "days": "Sun",
+          "open": "08:45",
+          "close": "18:30"
+        }
+      ]
+    },
+    "social": {
+      "facebook": "https://www.facebook.com/",
+      "instagram": "https://www.instagram.com/",
+      "youtube": "https://www.youtube.com/",
+      "linkedin": "https://www.linkedin.com/"
+    },
+    "stats": [
+      {
+        "label": "Cars delivered",
+        "value": 12480,
+        "suffix": "+"
+      },
+      {
+        "label": "Service jobs completed",
+        "value": 38600,
+        "suffix": "+"
+      },
+      {
+        "label": "Customer satisfaction",
+        "value": 98,
+        "suffix": "%"
+      },
+      {
+        "label": "Certified technicians",
+        "value": 42,
+        "suffix": ""
+      }
+    ]
+  },
+  "outlets": [
+    {
+      "id": "hosur-road-showroom",
+      "name": "Volkswagen Elite Motors — Hosur Road",
+      "type": "showroom",
+      "types": [
+        "sales"
+      ],
+      "address_line": "SY No. 49/8-9, 10, Hosur Rd, Singasandra",
+      "city": "Bengaluru",
+      "state": "Karnataka",
+      "pincode": "560100",
+      "full_address": "SY No. 49/8-9, 10, Hosur Rd, Singasandra, Bengaluru, Karnataka 560100",
+      "phone": "080 4013 8004",
+      "email": "crm@vw-elitemotors.co.in",
+      "map_url": "https://maps.app.goo.gl/w4kyArssdDreAsSu7",
+      "lat": 12.8797,
+      "lng": 77.6408,
+      "hours": [
+        {
+          "days": "Mon - Sat",
+          "open": "09:45",
+          "close": "19:10"
+        },
+        {
+          "days": "Sun",
+          "open": "10:00",
+          "close": "19:10"
+        }
+      ]
+    },
+    {
+      "id": "hosur-road-service",
+      "name": "Volkswagen Elite Motors Service — Hosur Road",
+      "type": "service",
+      "types": [
+        "service",
+        "bodyshop"
+      ],
+      "address_line": "SY No. 49/8-9, 10, Hosur Rd, Singasandra",
+      "city": "Bengaluru",
+      "state": "Karnataka",
+      "pincode": "560100",
+      "full_address": "SY No. 49/8-9, 10, Hosur Rd, Singasandra, Bengaluru, Karnataka 560100",
+      "phone": "080 4013 8004",
+      "email": "crhead@vw-elitemotors.co.in",
+      "map_url": "https://maps.app.goo.gl/w4kyArssdDreAsSu7",
+      "lat": 12.8797,
+      "lng": 77.6408,
+      "hours": [
+        {
+          "days": "Mon - Sat",
+          "open": "08:45",
+          "close": "18:30"
+        },
+        {
+          "days": "Sun",
+          "open": "08:45",
+          "close": "18:30"
+        }
+      ]
+    }
+  ],
+  "models": [
+    {
+      "slug": "tayron-r-line",
+      "name": "Tayron R-Line",
+      "family": "Tayron",
+      "variant_label": "R-Line",
+      "body_type": "SUV",
+      "seats": 7,
+      "segment": "flagship",
+      "status": "new",
+      "badge": "New Arrival",
+      "tagline": "Seven seats. Zero compromise.",
+      "description": "The Tayron R-Line carries Volkswagen's flagship SUV design language into a seven-seat package — IQ.LIGHT HD Matrix LED headlamps, a 15-inch infotainment display and R-Line detailing throughout, wrapped around precision German engineering.",
+      "price": {
+        "min": 4850000,
+        "max": 4850000,
+        "currency": "INR",
+        "note": "Indicative ex-showroom, Bengaluru"
+      },
+      "hero_image": "/assets/img/ourmodels/tayron-r-line.png",
+      "intro_image": "/assets/img/modelpage/tayron-r-line/details/tyron-r-line-intro-section.webp",
+      "gallery": [
+        "/assets/img/modelpage/tayron-r-line/gallery/tayron-r-line-1.webp",
+        "/assets/img/modelpage/tayron-r-line/gallery/tayron-r-line-2.webp",
+        "/assets/img/modelpage/tayron-r-line/gallery/tayron-r-line-3.webp",
+        "/assets/img/modelpage/tayron-r-line/gallery/tayron-r-line-4.webp",
+        "/assets/img/modelpage/tayron-r-line/gallery/tayron-r-line-5.webp",
+        "/assets/img/modelpage/tayron-r-line/gallery/tayron-r-line-6.webp",
+        "/assets/img/modelpage/tayron-r-line/gallery/tayron-r-line-7.webp"
+      ],
+      "specs": {
+        "engine": "2.0L TSI EVO",
+        "power": "190 PS",
+        "torque": "320 Nm",
+        "transmission": "7-speed DSG",
+        "drivetrain": "4MOTION AWD",
+        "fuel": "Petrol",
+        "zero_to_hundred": "7.8 s",
+        "seating": "7-seater",
+        "boot": "885 L"
+      },
+      "highlights": [
+        "IQ.LIGHT HD Matrix LED",
+        "15-inch Infotainment Screen",
+        "19-inch Coventry Alloy Wheels",
+        "Panoramic Sunroof",
+        "Varenna Leatherette Seats",
+        "Ambient Lighting",
+        "R-Line Detailing"
+      ],
+      "features": {
+        "Technology": [
+          "15-inch infotainment screen",
+          "Digital Cockpit Pro",
+          "Wireless App-Connect",
+          "Harman Kardon sound",
+          "Wireless charging"
+        ],
+        "Exterior": [
+          "IQ.LIGHT HD Matrix LED headlamps",
+          "19-inch Coventry alloy wheels",
+          "Illuminated grille bar",
+          "R-Line body styling",
+          "Panoramic sunroof"
+        ],
+        "Interior": [
+          "Varenna leatherette seats",
+          "30-colour ambient lighting",
+          "R-Line sports steering wheel",
+          "Three-zone climate control",
+          "Massage function front seats"
+        ],
+        "Safety": [
+          "9 airbags",
+          "IQ.DRIVE Travel Assist",
+          "Adaptive cruise control",
+          "Lane assist",
+          "360° camera",
+          "Park Assist Plus"
+        ]
+      },
+      "colors": [
+        {
+          "name": "Persimmon Red Metallic",
+          "hex": "#8E2323"
+        },
+        {
+          "name": "Oyster Silver Metallic",
+          "hex": "#C9CCCE"
+        },
+        {
+          "name": "Grenadilla Black Metallic",
+          "hex": "#15171A"
+        },
+        {
+          "name": "Nightshade Blue Metallic",
+          "hex": "#22304A"
+        }
+      ],
+      "variants": [
+        {
+          "id": "tayron-r-line-2-0l-tsi-evo-7-speed-dsg",
+          "model_slug": "tayron-r-line",
+          "model_name": "Tayron R-Line",
+          "name": "Tayron R-Line 2.0 TSI EVO DSG",
+          "trim": "R-Line",
+          "engine": "2.0L TSI EVO",
+          "power": "190 PS",
+          "torque": "320 Nm",
+          "transmission": "7-speed DSG",
+          "drivetrain": "4MOTION AWD",
+          "fuel": "Petrol",
+          "seats": 7,
+          "body_type": "SUV",
+          "price": 4850000,
+          "currency": "INR",
+          "price_note": "Indicative ex-showroom, Bengaluru"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What engine options does the Tayron R-Line come with?",
+          "answer": "The Tayron R-Line is offered with the 2.0L TSI EVO, producing 190 PS and 320 Nm, paired with 7-speed DSG."
+        },
+        {
+          "question": "How many variants of the Tayron R-Line are available?",
+          "answer": "Elite Motors lists 1 variant of the Tayron R-Line, across the R-Line trim."
+        },
+        {
+          "question": "What is the price of the Tayron R-Line?",
+          "answer": "The Tayron R-Line starts at ₹48,50,000 ex-showroom Bengaluru. Pricing is indicative — contact Elite Motors for on-road pricing."
+        },
+        {
+          "question": "What warranty does the Tayron R-Line carry?",
+          "answer": "Your Volkswagen is secured with a 4 year (100,000 kilometers) manufacturer's warranty to ensure a peaceful ownership experience."
+        },
+        {
+          "question": "Does the Tayron R-Line have a sunroof?",
+          "answer": "Yes — the Tayron R-Line is equipped with a panoramic sunroof."
+        },
+        {
+          "question": "Where can I service my Tayron R-Line in Bengaluru?",
+          "answer": "At Volkswagen Elite Motors, SY No. 49/8-9, 10, Hosur Rd, Singasandra, Bengaluru, Karnataka 560100. Service hours are Mon - Sat 08:45–18:30; Sun 08:45–18:30."
+        },
+        {
+          "question": "Can I book a test drive of the Tayron R-Line?",
+          "answer": "Yes. Test drives of the Tayron R-Line can be booked with Volkswagen Elite Motors on 080 4013 8004 or through the booking form on this site."
+        }
+      ]
+    },
+    {
+      "slug": "golf-gti",
+      "name": "Golf GTI",
+      "family": "Golf",
+      "variant_label": "GTI",
+      "body_type": "Hot Hatch",
+      "seats": 5,
+      "segment": "performance",
+      "status": "new",
+      "badge": "Icon",
+      "tagline": "The hot hatch that started it all.",
+      "description": "Power meets legacy. The Golf GTI pairs a 265 hp 2.0L TSI with a chassis honed over eight generations — signature red GTI accents, plaid seats and a 0-100 km/h sprint in 5.9 seconds.",
+      "price": {
+        "min": 5300000,
+        "max": 5300000,
+        "currency": "INR",
+        "note": "Indicative ex-showroom, Bengaluru"
+      },
+      "hero_image": "/assets/img/ourmodels/golf-gti.png",
+      "intro_image": "/assets/img/modelpage/golf-gti/golf-gti-image.webp",
+      "gallery": [
+        "/assets/img/modelpage/golf-gti/gallery/1.webp",
+        "/assets/img/modelpage/golf-gti/gallery/2.webp",
+        "/assets/img/modelpage/golf-gti/gallery/3.webp",
+        "/assets/img/modelpage/golf-gti/gallery/4.webp",
+        "/assets/img/modelpage/golf-gti/gallery/5.webp",
+        "/assets/img/modelpage/golf-gti/sections/1.webp",
+        "/assets/img/modelpage/golf-gti/sections/2.webp",
+        "/assets/img/modelpage/golf-gti/sections/3.webp"
+      ],
+      "specs": {
+        "engine": "2.0L TSI",
+        "power": "265 hp",
+        "torque": "370 Nm",
+        "transmission": "7-speed DSG with paddle shifts",
+        "drivetrain": "FWD with XDS",
+        "fuel": "Petrol",
+        "zero_to_hundred": "5.9 s",
+        "seating": "5-seater",
+        "boot": "374 L"
+      },
+      "highlights": [
+        "265 hp 2.0L TSI",
+        "0-100 km/h in 5.9 s",
+        "12.9-inch touchscreen",
+        "Panoramic sunroof",
+        "Illuminated VW logo",
+        "Plaid seats with red accents"
+      ],
+      "features": {
+        "Technology": [
+          "12.9-inch touchscreen",
+          "Digital Cockpit Pro (10.25-inch)",
+          "Seven-speaker sound system",
+          "Wireless charging",
+          "Voice control",
+          "App-Connect"
+        ],
+        "Exterior": [
+          "Illuminated VW logo",
+          "X-shaped fog lights",
+          "18-inch diamond-turned wheels",
+          "Twin chrome exhausts",
+          "Ambient lighting"
+        ],
+        "Interior": [
+          "Plaid seats with red accents",
+          "30-colour ambient lighting",
+          "Leather sports steering wheel",
+          "Paddle shifts",
+          "Panoramic sunroof",
+          "Three-zone AC",
+          "Rear AC vents",
+          "Keyless start"
+        ],
+        "Safety": [
+          "Seven airbags",
+          "XDS electronic differential lock",
+          "Adaptive cruise control",
+          "Lane assist",
+          "Front emergency braking with pedestrian & cyclist monitoring",
+          "Rear-view camera",
+          "Park distance control"
+        ]
+      },
+      "colors": [
+        {
+          "name": "Kings Red Metallic",
+          "hex": "#A31621"
+        },
+        {
+          "name": "Pure White",
+          "hex": "#F2F3F5"
+        },
+        {
+          "name": "Moonstone Grey",
+          "hex": "#8A8F94"
+        },
+        {
+          "name": "Deep Black Pearl",
+          "hex": "#101215"
+        }
+      ],
+      "variants": [
+        {
+          "id": "golf-gti-2-0l-tsi-7-speed-dsg",
+          "model_slug": "golf-gti",
+          "model_name": "Golf GTI",
+          "name": "Golf GTI 2.0 TSI DSG",
+          "trim": "GTI",
+          "engine": "2.0L TSI",
+          "power": "265 hp",
+          "torque": "370 Nm",
+          "transmission": "7-speed DSG",
+          "drivetrain": "FWD with XDS",
+          "fuel": "Petrol",
+          "seats": 5,
+          "body_type": "Hot Hatch",
+          "price": 5300000,
+          "currency": "INR",
+          "price_note": "Indicative ex-showroom, Bengaluru"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What engine options does the Golf GTI come with?",
+          "answer": "The Golf GTI is offered with the 2.0L TSI, producing 265 hp and 370 Nm, paired with 7-speed DSG with paddle shifts."
+        },
+        {
+          "question": "How many variants of the Golf GTI are available?",
+          "answer": "Elite Motors lists 1 variant of the Golf GTI, across the GTI trim."
+        },
+        {
+          "question": "What is the price of the Golf GTI?",
+          "answer": "The Golf GTI starts at ₹53,00,000 ex-showroom Bengaluru. Pricing is indicative — contact Elite Motors for on-road pricing."
+        },
+        {
+          "question": "What warranty does the Golf GTI carry?",
+          "answer": "Your Volkswagen is secured with a 4 year (100,000 kilometers) manufacturer's warranty to ensure a peaceful ownership experience."
+        },
+        {
+          "question": "Does the Golf GTI have a sunroof?",
+          "answer": "Yes — the Golf GTI is equipped with a panoramic sunroof."
+        },
+        {
+          "question": "Where can I service my Golf GTI in Bengaluru?",
+          "answer": "At Volkswagen Elite Motors, SY No. 49/8-9, 10, Hosur Rd, Singasandra, Bengaluru, Karnataka 560100. Service hours are Mon - Sat 08:45–18:30; Sun 08:45–18:30."
+        },
+        {
+          "question": "Can I book a test drive of the Golf GTI?",
+          "answer": "Yes. Test drives of the Golf GTI can be booked with Volkswagen Elite Motors on 080 4013 8004 or through the booking form on this site."
+        }
+      ]
+    },
+    {
+      "slug": "tiguan-r-line",
+      "name": "Tiguan R-Line",
+      "family": "Tiguan",
+      "variant_label": "R-Line",
+      "body_type": "SUV",
+      "seats": 5,
+      "segment": "premium",
+      "status": "new",
+      "badge": "R-Line",
+      "tagline": "Sporty aesthetics. Precision engineering.",
+      "description": "The Tiguan R-Line blends sporty aesthetics with precision German engineering, featuring a bold R-inspired design and top-of-the-line features.",
+      "price": {
+        "min": 4900000,
+        "max": 4900000,
+        "currency": "INR",
+        "note": "Indicative ex-showroom, Bengaluru"
+      },
+      "hero_image": "/assets/img/ourmodels/tiguan-r-line.png",
+      "intro_image": "/assets/img/modelpage/tiguan-r-line/gallery/1.webp",
+      "gallery": [
+        "/assets/img/modelpage/tiguan-r-line/gallery/1.webp",
+        "/assets/img/modelpage/tiguan-r-line/gallery/2.webp",
+        "/assets/img/modelpage/tiguan-r-line/gallery/3.webp",
+        "/assets/img/modelpage/tiguan-r-line/gallery/4.webp",
+        "/assets/img/modelpage/tiguan-r-line/gallery/5.webp"
+      ],
+      "specs": {
+        "engine": "2.0L TSI",
+        "power": "190 PS",
+        "torque": "320 Nm",
+        "transmission": "7-speed DSG",
+        "drivetrain": "4MOTION AWD",
+        "fuel": "Petrol",
+        "zero_to_hundred": "7.8 s",
+        "seating": "5-seater",
+        "boot": "652 L"
+      },
+      "highlights": [
+        "R-inspired design",
+        "IQ.LIGHT LED Matrix",
+        "4MOTION all-wheel drive",
+        "Panoramic sunroof",
+        "Harman Kardon audio",
+        "Digital Cockpit Pro"
+      ],
+      "features": {
+        "Technology": [
+          "Digital Cockpit Pro",
+          "Wireless App-Connect",
+          "Harman Kardon premium audio",
+          "Wireless charging",
+          "Voice control"
+        ],
+        "Exterior": [
+          "IQ.LIGHT LED Matrix headlamps",
+          "R-Line body kit",
+          "19-inch alloy wheels",
+          "Panoramic sunroof",
+          "Illuminated light bar"
+        ],
+        "Interior": [
+          "R-Line sports seats",
+          "30-colour ambient lighting",
+          "Three-zone climate control",
+          "Sports steering wheel with paddles"
+        ],
+        "Safety": [
+          "6 airbags",
+          "Adaptive cruise control",
+          "Lane assist",
+          "Front assist",
+          "360° camera",
+          "Park Assist",
+          "Electronic Stability Control"
+        ]
+      },
+      "colors": [
+        {
+          "name": "Oryx White Pearl",
+          "hex": "#EFEFEC"
+        },
+        {
+          "name": "Kings Red Metallic",
+          "hex": "#8C1C25"
+        },
+        {
+          "name": "Nightshade Blue",
+          "hex": "#23324C"
+        },
+        {
+          "name": "Deep Black Pearl",
+          "hex": "#101215"
+        }
+      ],
+      "variants": [
+        {
+          "id": "tiguan-r-line-2-0l-tsi-7-speed-dsg",
+          "model_slug": "tiguan-r-line",
+          "model_name": "Tiguan R-Line",
+          "name": "Tiguan R-Line 2.0 TSI DSG",
+          "trim": "R-Line",
+          "engine": "2.0L TSI",
+          "power": "190 PS",
+          "torque": "320 Nm",
+          "transmission": "7-speed DSG",
+          "drivetrain": "4MOTION AWD",
+          "fuel": "Petrol",
+          "seats": 5,
+          "body_type": "SUV",
+          "price": 4900000,
+          "currency": "INR",
+          "price_note": "Indicative ex-showroom, Bengaluru"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What engine options does the Tiguan R-Line come with?",
+          "answer": "The Tiguan R-Line is offered with the 2.0L TSI, producing 190 PS and 320 Nm, paired with 7-speed DSG."
+        },
+        {
+          "question": "How many variants of the Tiguan R-Line are available?",
+          "answer": "Elite Motors lists 1 variant of the Tiguan R-Line, across the R-Line trim."
+        },
+        {
+          "question": "What is the price of the Tiguan R-Line?",
+          "answer": "The Tiguan R-Line starts at ₹49,00,000 ex-showroom Bengaluru. Pricing is indicative — contact Elite Motors for on-road pricing."
+        },
+        {
+          "question": "What warranty does the Tiguan R-Line carry?",
+          "answer": "Your Volkswagen is secured with a 4 year (100,000 kilometers) manufacturer's warranty to ensure a peaceful ownership experience."
+        },
+        {
+          "question": "Does the Tiguan R-Line have a sunroof?",
+          "answer": "Yes — the Tiguan R-Line is equipped with a panoramic sunroof."
+        },
+        {
+          "question": "Where can I service my Tiguan R-Line in Bengaluru?",
+          "answer": "At Volkswagen Elite Motors, SY No. 49/8-9, 10, Hosur Rd, Singasandra, Bengaluru, Karnataka 560100. Service hours are Mon - Sat 08:45–18:30; Sun 08:45–18:30."
+        },
+        {
+          "question": "Can I book a test drive of the Tiguan R-Line?",
+          "answer": "Yes. Test drives of the Tiguan R-Line can be booked with Volkswagen Elite Motors on 080 4013 8004 or through the booking form on this site."
+        }
+      ]
+    },
+    {
+      "slug": "virtus-sport",
+      "name": "Virtus Sport",
+      "family": "Virtus",
+      "variant_label": "GT Plus Sport / GT Line",
+      "body_type": "Sedan",
+      "seats": 5,
+      "segment": "core",
+      "status": "available",
+      "badge": "5★ GNCAP",
+      "tagline": "Dark. Sharp. Unmistakably GT.",
+      "description": "A dark-themed sedan built for drivers — glossy black aerokit, laser red ambient lighting and Wild Cherry Red stitching, backed by a 5-star Global NCAP rating and over 40 safety features.",
+      "price": {
+        "min": 1156000,
+        "max": 1942000,
+        "currency": "INR",
+        "note": "Indicative ex-showroom, Bengaluru"
+      },
+      "hero_image": "/assets/img/ourmodels/virtus-sport.png",
+      "intro_image": "/assets/img/modelpage/virtus-sport/details/virtus-gt-sport-intro.webp",
+      "gallery": [
+        "/assets/img/modelpage/virtus-sport/details/virtus-gt-sport-intro.webp",
+        "/assets/img/modelpage/virtus-sport/details/virtus-gt-line-intro.webp",
+        "/assets/img/modelpage/virtus-sport/details/1.webp",
+        "/assets/img/modelpage/virtus-sport/details/2.webp",
+        "/assets/img/modelpage/virtus-sport/details/4.webp",
+        "/assets/img/modelpage/virtus-sport/details/6.webp",
+        "/assets/img/modelpage/virtus-sport/details/7.webp",
+        "/assets/img/modelpage/virtus-sport/details/8.webp"
+      ],
+      "specs": {
+        "engine": "1.5L TSI EVO (ACT) / 1.0L TSI",
+        "power": "150 PS / 115 PS",
+        "torque": "250 Nm / 178 Nm",
+        "transmission": "6-speed MT or 7-speed DSG",
+        "drivetrain": "FWD",
+        "fuel": "Petrol",
+        "zero_to_hundred": "8.9 s",
+        "seating": "5-seater",
+        "boot": "521 L"
+      },
+      "highlights": [
+        "5-star Global NCAP rating",
+        "40+ safety features",
+        "1.5L TSI EVO with Active Cylinder Technology",
+        "Glossy Black Aerokit",
+        "Laser Red Ambient Lighting",
+        "Wild Cherry Red stitching"
+      ],
+      "features": {
+        "Technology": [
+          "10-inch touchscreen infotainment",
+          "Digital Cockpit",
+          "Wireless App-Connect",
+          "Ventilated front seats",
+          "Wireless charging"
+        ],
+        "Exterior": [
+          "Black glossy front grille",
+          "Dark LED lighting",
+          "Glossy black aerokit",
+          "Black wing spoiler",
+          "16-inch GT alloy wheels"
+        ],
+        "Interior": [
+          "Dark-themed design",
+          "Glossy black dashboard",
+          "Laser Red ambient lighting",
+          "Wild Cherry Red stitching",
+          "Leatherette + fabric upholstery",
+          "Embroidered GT logo"
+        ],
+        "Safety": [
+          "6 airbags as standard",
+          "Electronic Stability Control",
+          "5-star Global NCAP",
+          "Over 40 safety features",
+          "Hill hold control",
+          "Tyre pressure monitoring"
+        ]
+      },
+      "variants": [
+        {
+          "id": "virtus-gt-line-1-0l-tsi-6-speed-mt",
+          "model_slug": "virtus-sport",
+          "model_name": "Virtus Sport",
+          "name": "Virtus GT Line 1.0 TSI MT",
+          "trim": "GT Line",
+          "engine": "1.0L TSI",
+          "power": "115 PS",
+          "torque": "178 Nm",
+          "transmission": "6-speed MT",
+          "drivetrain": "FWD",
+          "fuel": "Petrol",
+          "seats": 5,
+          "body_type": "Sedan",
+          "price": 1156000,
+          "currency": "INR",
+          "price_note": "Indicative ex-showroom, Bengaluru"
+        },
+        {
+          "id": "virtus-gt-line-1-0l-tsi-6-speed-at",
+          "model_slug": "virtus-sport",
+          "model_name": "Virtus Sport",
+          "name": "Virtus GT Line 1.0 TSI AT",
+          "trim": "GT Line",
+          "engine": "1.0L TSI",
+          "power": "115 PS",
+          "torque": "178 Nm",
+          "transmission": "6-speed AT",
+          "drivetrain": "FWD",
+          "fuel": "Petrol",
+          "seats": 5,
+          "body_type": "Sedan",
+          "price": 1392000,
+          "currency": "INR",
+          "price_note": "Indicative ex-showroom, Bengaluru"
+        },
+        {
+          "id": "virtus-gt-plus-sport-1-5l-tsi-evo-6-speed-mt",
+          "model_slug": "virtus-sport",
+          "model_name": "Virtus Sport",
+          "name": "Virtus GT Plus Sport 1.5 TSI EVO MT",
+          "trim": "GT Plus Sport",
+          "engine": "1.5L TSI EVO",
+          "power": "150 PS",
+          "torque": "250 Nm",
+          "transmission": "6-speed MT",
+          "drivetrain": "FWD",
+          "fuel": "Petrol",
+          "seats": 5,
+          "body_type": "Sedan",
+          "price": 1706000,
+          "currency": "INR",
+          "price_note": "Indicative ex-showroom, Bengaluru"
+        },
+        {
+          "id": "virtus-gt-plus-sport-1-5l-tsi-evo-7-speed-dsg",
+          "model_slug": "virtus-sport",
+          "model_name": "Virtus Sport",
+          "name": "Virtus GT Plus Sport 1.5 TSI EVO DSG",
+          "trim": "GT Plus Sport",
+          "engine": "1.5L TSI EVO",
+          "power": "150 PS",
+          "torque": "250 Nm",
+          "transmission": "7-speed DSG",
+          "drivetrain": "FWD",
+          "fuel": "Petrol",
+          "seats": 5,
+          "body_type": "Sedan",
+          "price": 1942000,
+          "currency": "INR",
+          "price_note": "Indicative ex-showroom, Bengaluru"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Carbon Steel Grey Matt",
+          "hex": "#5A5E62"
+        },
+        {
+          "name": "Wild Cherry Red",
+          "hex": "#7E1220"
+        },
+        {
+          "name": "Curcuma Yellow",
+          "hex": "#D8A51D"
+        },
+        {
+          "name": "Deep Black Pearl",
+          "hex": "#101215"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What engine options does the Virtus Sport come with?",
+          "answer": "The Virtus Sport is offered with the 1.5L TSI EVO (ACT) / 1.0L TSI, producing 150 PS / 115 PS and 250 Nm / 178 Nm, paired with 6-speed MT or 7-speed DSG."
+        },
+        {
+          "question": "How many variants of the Virtus Sport are available?",
+          "answer": "Elite Motors lists 4 variants of the Virtus Sport, across the GT Line and GT Plus Sport trims."
+        },
+        {
+          "question": "What is the price of the Virtus Sport?",
+          "answer": "The Virtus Sport ranges from ₹11,56,000 to ₹19,42,000 ex-showroom Bengaluru. Pricing is indicative — contact Elite Motors for on-road pricing."
+        },
+        {
+          "question": "How safe is the Virtus Sport?",
+          "answer": "The Virtus Sport carries a 5-star global ncap and offers 6 airbags as standard, electronic stability control, 5-star global ncap, over 40 safety features."
+        },
+        {
+          "question": "What warranty does the Virtus Sport carry?",
+          "answer": "Your Volkswagen is secured with a 4 year (100,000 kilometers) manufacturer's warranty to ensure a peaceful ownership experience."
+        },
+        {
+          "question": "Where can I service my Virtus Sport in Bengaluru?",
+          "answer": "At Volkswagen Elite Motors, SY No. 49/8-9, 10, Hosur Rd, Singasandra, Bengaluru, Karnataka 560100. Service hours are Mon - Sat 08:45–18:30; Sun 08:45–18:30."
+        },
+        {
+          "question": "Can I book a test drive of the Virtus Sport?",
+          "answer": "Yes. Test drives of the Virtus Sport can be booked with Volkswagen Elite Motors on 080 4013 8004 or through the booking form on this site."
+        }
+      ]
+    },
+    {
+      "slug": "virtus-chrome",
+      "name": "Virtus Chrome",
+      "family": "Virtus",
+      "variant_label": "Chrome",
+      "body_type": "Sedan",
+      "seats": 5,
+      "segment": "core",
+      "status": "available",
+      "badge": "5★ GNCAP",
+      "tagline": "Chrome-finished confidence.",
+      "description": "The Virtus Chrome takes the same 5-star Global NCAP platform and dresses it in brightwork — chrome grille detailing, chrome window surrounds and a lighter, more luxurious cabin treatment.",
+      "price": {
+        "min": 1156000,
+        "max": 1942000,
+        "currency": "INR",
+        "note": "Indicative ex-showroom, Bengaluru"
+      },
+      "hero_image": "/assets/img/ourmodels/virtus-chrome.png",
+      "intro_image": "/assets/img/modelpage/virtus-chrome/details/1.webp",
+      "gallery": [
+        "/assets/img/modelpage/virtus-chrome/details/1.webp",
+        "/assets/img/modelpage/virtus-chrome/details/2.webp",
+        "/assets/img/modelpage/virtus-chrome/details/3.webp",
+        "/assets/img/modelpage/virtus-chrome/details/6.webp",
+        "/assets/img/modelpage/virtus-chrome/details/7.webp",
+        "/assets/img/modelpage/virtus-chrome/details/8.webp"
+      ],
+      "specs": {
+        "engine": "1.5L TSI EVO (ACT) / 1.0L TSI",
+        "power": "150 PS / 115 PS",
+        "torque": "250 Nm / 178 Nm",
+        "transmission": "6-speed MT or 7-speed DSG",
+        "drivetrain": "FWD",
+        "fuel": "Petrol",
+        "zero_to_hundred": "8.9 s",
+        "seating": "5-seater",
+        "boot": "521 L"
+      },
+      "highlights": [
+        "Chrome grille and window surrounds",
+        "5-star Global NCAP rating",
+        "Ventilated front seats",
+        "Electric sunroof",
+        "Digital Cockpit",
+        "Ambient lighting"
+      ],
+      "features": {
+        "Technology": [
+          "10-inch touchscreen infotainment",
+          "Digital Cockpit",
+          "Wireless App-Connect",
+          "Ventilated front seats"
+        ],
+        "Exterior": [
+          "Chrome front grille",
+          "Chrome window surrounds",
+          "LED headlamps with DRL",
+          "16-inch alloy wheels",
+          "Electric sunroof"
+        ],
+        "Interior": [
+          "Dual-tone beige cabin",
+          "Leatherette upholstery",
+          "Ambient lighting",
+          "Cooled glovebox"
+        ],
+        "Safety": [
+          "6 airbags as standard",
+          "Electronic Stability Control",
+          "5-star Global NCAP",
+          "Over 40 safety features",
+          "Rear parking camera"
+        ]
+      },
+      "colors": [
+        {
+          "name": "Reflex Silver",
+          "hex": "#B7BBBE"
+        },
+        {
+          "name": "Candy White",
+          "hex": "#F4F5F6"
+        },
+        {
+          "name": "Rising Blue Metallic",
+          "hex": "#1F4E79"
+        },
+        {
+          "name": "Deep Black Pearl",
+          "hex": "#101215"
+        }
+      ],
+      "variants": [
+        {
+          "id": "virtus-comfortline-1-0l-tsi-6-speed-mt",
+          "model_slug": "virtus-chrome",
+          "model_name": "Virtus Chrome",
+          "name": "Virtus Comfortline 1.0 TSI MT",
+          "trim": "Comfortline",
+          "engine": "1.0L TSI",
+          "power": "115 PS",
+          "torque": "178 Nm",
+          "transmission": "6-speed MT",
+          "drivetrain": "FWD",
+          "fuel": "Petrol",
+          "seats": 5,
+          "body_type": "Sedan",
+          "price": 1156000,
+          "currency": "INR",
+          "price_note": "Indicative ex-showroom, Bengaluru"
+        },
+        {
+          "id": "virtus-highline-1-0l-tsi-6-speed-mt",
+          "model_slug": "virtus-chrome",
+          "model_name": "Virtus Chrome",
+          "name": "Virtus Highline 1.0 TSI MT",
+          "trim": "Highline",
+          "engine": "1.0L TSI",
+          "power": "115 PS",
+          "torque": "178 Nm",
+          "transmission": "6-speed MT",
+          "drivetrain": "FWD",
+          "fuel": "Petrol",
+          "seats": 5,
+          "body_type": "Sedan",
+          "price": 1431000,
+          "currency": "INR",
+          "price_note": "Indicative ex-showroom, Bengaluru"
+        },
+        {
+          "id": "virtus-highline-1-0l-tsi-6-speed-at",
+          "model_slug": "virtus-chrome",
+          "model_name": "Virtus Chrome",
+          "name": "Virtus Highline 1.0 TSI AT",
+          "trim": "Highline",
+          "engine": "1.0L TSI",
+          "power": "115 PS",
+          "torque": "178 Nm",
+          "transmission": "6-speed AT",
+          "drivetrain": "FWD",
+          "fuel": "Petrol",
+          "seats": 5,
+          "body_type": "Sedan",
+          "price": 1667000,
+          "currency": "INR",
+          "price_note": "Indicative ex-showroom, Bengaluru"
+        },
+        {
+          "id": "virtus-topline-1-0l-tsi-6-speed-at",
+          "model_slug": "virtus-chrome",
+          "model_name": "Virtus Chrome",
+          "name": "Virtus Topline 1.0 TSI AT",
+          "trim": "Topline",
+          "engine": "1.0L TSI",
+          "power": "115 PS",
+          "torque": "178 Nm",
+          "transmission": "6-speed AT",
+          "drivetrain": "FWD",
+          "fuel": "Petrol",
+          "seats": 5,
+          "body_type": "Sedan",
+          "price": 1942000,
+          "currency": "INR",
+          "price_note": "Indicative ex-showroom, Bengaluru"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What engine options does the Virtus Chrome come with?",
+          "answer": "The Virtus Chrome is offered with the 1.5L TSI EVO (ACT) / 1.0L TSI, producing 150 PS / 115 PS and 250 Nm / 178 Nm, paired with 6-speed MT or 7-speed DSG."
+        },
+        {
+          "question": "How many variants of the Virtus Chrome are available?",
+          "answer": "Elite Motors lists 4 variants of the Virtus Chrome, across the Comfortline and Highline and Topline trims."
+        },
+        {
+          "question": "What is the price of the Virtus Chrome?",
+          "answer": "The Virtus Chrome ranges from ₹11,56,000 to ₹19,42,000 ex-showroom Bengaluru. Pricing is indicative — contact Elite Motors for on-road pricing."
+        },
+        {
+          "question": "How safe is the Virtus Chrome?",
+          "answer": "The Virtus Chrome carries a 5-star global ncap and offers 6 airbags as standard, electronic stability control, 5-star global ncap, over 40 safety features."
+        },
+        {
+          "question": "Does the Virtus Chrome have a sunroof?",
+          "answer": "Yes — the Virtus Chrome is equipped with a electric sunroof."
+        },
+        {
+          "question": "What warranty does the Virtus Chrome carry?",
+          "answer": "Your Volkswagen is secured with a 4 year (100,000 kilometers) manufacturer's warranty to ensure a peaceful ownership experience."
+        },
+        {
+          "question": "Where can I service my Virtus Chrome in Bengaluru?",
+          "answer": "At Volkswagen Elite Motors, SY No. 49/8-9, 10, Hosur Rd, Singasandra, Bengaluru, Karnataka 560100. Service hours are Mon - Sat 08:45–18:30; Sun 08:45–18:30."
+        },
+        {
+          "question": "Can I book a test drive of the Virtus Chrome?",
+          "answer": "Yes. Test drives of the Virtus Chrome can be booked with Volkswagen Elite Motors on 080 4013 8004 or through the booking form on this site."
+        }
+      ]
+    },
+    {
+      "slug": "taigun-sport",
+      "name": "Taigun Sport",
+      "family": "Taigun",
+      "variant_label": "GT Plus Sport / GT Line",
+      "body_type": "SUV",
+      "seats": 5,
+      "segment": "core",
+      "status": "available",
+      "badge": "29.8 km/l record",
+      "tagline": "Built for the ones who go looking.",
+      "description": "The Taigun Sport is built for explorers — muscular design, German-engineered body shell and a 1.0L TSI that set a 24-hour endurance record at 29.8 km/l. Dual-tone leatherette, aluminium pedals and GT red brake calipers finish the story.",
+      "price": {
+        "min": 1170000,
+        "max": 1940000,
+        "currency": "INR",
+        "note": "Indicative ex-showroom, Bengaluru"
+      },
+      "hero_image": "/assets/img/ourmodels/taigun-sport.png",
+      "intro_image": "/assets/img/modelpage/taigun-sport/details/taigun-gt-plus-sport-2.webp",
+      "gallery": [
+        "/assets/img/modelpage/taigun-sport/details/taigun-gt-plus-sport-2.webp",
+        "/assets/img/modelpage/taigun-sport/details/taigun-gt-line-image.webp",
+        "/assets/img/modelpage/taigun-sport/details/1.webp",
+        "/assets/img/modelpage/taigun-sport/details/2.webp",
+        "/assets/img/modelpage/taigun-sport/details/4.webp",
+        "/assets/img/modelpage/taigun-sport/details/6.webp",
+        "/assets/img/modelpage/taigun-sport/details/7.webp",
+        "/assets/img/modelpage/taigun-sport/details/8.webp"
+      ],
+      "specs": {
+        "engine": "1.5L TSI EVO (ACT) / 1.0L TSI",
+        "power": "150 PS / 115 PS",
+        "torque": "250 Nm / 178 Nm",
+        "transmission": "6-speed MT or 7-speed DSG",
+        "drivetrain": "FWD",
+        "fuel": "Petrol",
+        "mileage_record": "29.8 km/l (24-hour endurance record, 1.0L TSI)",
+        "seating": "5-seater",
+        "boot": "385 L"
+      },
+      "highlights": [
+        "5-star Global NCAP rating",
+        "40+ safety features",
+        "29.8 km/l endurance record",
+        "GT red brake calipers",
+        "Laser Red ambient lighting",
+        "Aluminium pedals"
+      ],
+      "features": {
+        "Technology": [
+          "10-inch touchscreen infotainment",
+          "Digital Cockpit",
+          "Wireless App-Connect",
+          "Ventilated front seats",
+          "Wireless charging"
+        ],
+        "Exterior": [
+          "LED tail lamps",
+          "Black chrome exterior elements",
+          "GT red brake calipers",
+          "17-inch alloy wheels",
+          "Electric sunroof"
+        ],
+        "Interior": [
+          "Dual-tone leatherette seats with Wild Cherry Red stitching",
+          "Aluminium pedals",
+          "Laser Red ambient lighting",
+          "Embroidered GT logo"
+        ],
+        "Safety": [
+          "Up to 6 airbags",
+          "Electronic Stability Control (ESC)",
+          "5-star Global NCAP",
+          "Over 40 safety features",
+          "German-engineered body shell",
+          "Hill hold control"
+        ]
+      },
+      "variants": [
+        {
+          "id": "taigun-gt-line-1-0l-tsi-6-speed-mt",
+          "model_slug": "taigun-sport",
+          "model_name": "Taigun Sport",
+          "name": "Taigun GT Line 1.0 TSI MT",
+          "trim": "GT Line",
+          "engine": "1.0L TSI",
+          "power": "115 PS",
+          "torque": "178 Nm",
+          "transmission": "6-speed MT",
+          "drivetrain": "FWD",
+          "fuel": "Petrol",
+          "seats": 5,
+          "body_type": "SUV",
+          "price": 1170000,
+          "currency": "INR",
+          "price_note": "Indicative ex-showroom, Bengaluru"
+        },
+        {
+          "id": "taigun-gt-line-1-0l-tsi-6-speed-at",
+          "model_slug": "taigun-sport",
+          "model_name": "Taigun Sport",
+          "name": "Taigun GT Line 1.0 TSI AT",
+          "trim": "GT Line",
+          "engine": "1.0L TSI",
+          "power": "115 PS",
+          "torque": "178 Nm",
+          "transmission": "6-speed AT",
+          "drivetrain": "FWD",
+          "fuel": "Petrol",
+          "seats": 5,
+          "body_type": "SUV",
+          "price": 1401000,
+          "currency": "INR",
+          "price_note": "Indicative ex-showroom, Bengaluru"
+        },
+        {
+          "id": "taigun-gt-plus-sport-1-5l-tsi-evo-6-speed-mt",
+          "model_slug": "taigun-sport",
+          "model_name": "Taigun Sport",
+          "name": "Taigun GT Plus Sport 1.5 TSI EVO MT",
+          "trim": "GT Plus Sport",
+          "engine": "1.5L TSI EVO",
+          "power": "150 PS",
+          "torque": "250 Nm",
+          "transmission": "6-speed MT",
+          "drivetrain": "FWD",
+          "fuel": "Petrol",
+          "seats": 5,
+          "body_type": "SUV",
+          "price": 1709000,
+          "currency": "INR",
+          "price_note": "Indicative ex-showroom, Bengaluru"
+        },
+        {
+          "id": "taigun-gt-plus-sport-1-5l-tsi-evo-7-speed-dsg",
+          "model_slug": "taigun-sport",
+          "model_name": "Taigun Sport",
+          "name": "Taigun GT Plus Sport 1.5 TSI EVO DSG",
+          "trim": "GT Plus Sport",
+          "engine": "1.5L TSI EVO",
+          "power": "150 PS",
+          "torque": "250 Nm",
+          "transmission": "7-speed DSG",
+          "drivetrain": "FWD",
+          "fuel": "Petrol",
+          "seats": 5,
+          "body_type": "SUV",
+          "price": 1940000,
+          "currency": "INR",
+          "price_note": "Indicative ex-showroom, Bengaluru"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Curcuma Yellow",
+          "hex": "#D8A51D"
+        },
+        {
+          "name": "Wild Cherry Red",
+          "hex": "#7E1220"
+        },
+        {
+          "name": "Carbon Steel Grey",
+          "hex": "#5A5E62"
+        },
+        {
+          "name": "Deep Black Pearl",
+          "hex": "#101215"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What engine options does the Taigun Sport come with?",
+          "answer": "The Taigun Sport is offered with the 1.5L TSI EVO (ACT) / 1.0L TSI, producing 150 PS / 115 PS and 250 Nm / 178 Nm, paired with 6-speed MT or 7-speed DSG."
+        },
+        {
+          "question": "How many variants of the Taigun Sport are available?",
+          "answer": "Elite Motors lists 4 variants of the Taigun Sport, across the GT Line and GT Plus Sport trims."
+        },
+        {
+          "question": "What is the price of the Taigun Sport?",
+          "answer": "The Taigun Sport ranges from ₹11,70,000 to ₹19,40,000 ex-showroom Bengaluru. Pricing is indicative — contact Elite Motors for on-road pricing."
+        },
+        {
+          "question": "How safe is the Taigun Sport?",
+          "answer": "The Taigun Sport carries a 5-star global ncap and offers up to 6 airbags, electronic stability control (esc), 5-star global ncap, over 40 safety features."
+        },
+        {
+          "question": "Does the Taigun Sport have a sunroof?",
+          "answer": "Yes — the Taigun Sport is equipped with a electric sunroof."
+        },
+        {
+          "question": "What warranty does the Taigun Sport carry?",
+          "answer": "Your Volkswagen is secured with a 4 year (100,000 kilometers) manufacturer's warranty to ensure a peaceful ownership experience."
+        },
+        {
+          "question": "Where can I service my Taigun Sport in Bengaluru?",
+          "answer": "At Volkswagen Elite Motors, SY No. 49/8-9, 10, Hosur Rd, Singasandra, Bengaluru, Karnataka 560100. Service hours are Mon - Sat 08:45–18:30; Sun 08:45–18:30."
+        },
+        {
+          "question": "Can I book a test drive of the Taigun Sport?",
+          "answer": "Yes. Test drives of the Taigun Sport can be booked with Volkswagen Elite Motors on 080 4013 8004 or through the booking form on this site."
+        }
+      ]
+    },
+    {
+      "slug": "taigun-chrome",
+      "name": "Taigun Chrome",
+      "family": "Taigun",
+      "variant_label": "Chrome",
+      "body_type": "SUV",
+      "seats": 5,
+      "segment": "core",
+      "status": "available",
+      "badge": "5★ GNCAP",
+      "tagline": "Brightwork, done properly.",
+      "description": "The Taigun Chrome brings a lighter, more refined treatment to Volkswagen's compact SUV — chrome accents, a bright cabin and the same German-engineered safety structure underneath.",
+      "price": {
+        "min": 1170000,
+        "max": 1940000,
+        "currency": "INR",
+        "note": "Indicative ex-showroom, Bengaluru"
+      },
+      "hero_image": "/assets/img/ourmodels/taigun-chrome.png",
+      "intro_image": "/assets/img/modelpage/taigun-chrome/details/6.webp",
+      "gallery": [
+        "/assets/img/modelpage/taigun-chrome/details/6.webp",
+        "/assets/img/modelpage/taigun-chrome/details/7.webp",
+        "/assets/img/modelpage/taigun-chrome/details/8.webp"
+      ],
+      "specs": {
+        "engine": "1.5L TSI EVO (ACT) / 1.0L TSI",
+        "power": "150 PS / 115 PS",
+        "torque": "250 Nm / 178 Nm",
+        "transmission": "6-speed MT or 7-speed DSG",
+        "drivetrain": "FWD",
+        "fuel": "Petrol",
+        "seating": "5-seater",
+        "boot": "385 L"
+      },
+      "highlights": [
+        "Chrome exterior detailing",
+        "5-star Global NCAP rating",
+        "Electric sunroof",
+        "Ventilated front seats",
+        "Digital Cockpit",
+        "40+ safety features"
+      ],
+      "features": {
+        "Technology": [
+          "10-inch touchscreen infotainment",
+          "Digital Cockpit",
+          "Wireless App-Connect",
+          "Ventilated front seats"
+        ],
+        "Exterior": [
+          "Chrome grille and roof rails",
+          "LED headlamps with DRL",
+          "17-inch alloy wheels",
+          "Electric sunroof"
+        ],
+        "Interior": [
+          "Dual-tone beige cabin",
+          "Leatherette upholstery",
+          "Ambient lighting",
+          "Cooled glovebox"
+        ],
+        "Safety": [
+          "Up to 6 airbags",
+          "Electronic Stability Control",
+          "5-star Global NCAP",
+          "Over 40 safety features",
+          "Rear parking camera"
+        ]
+      },
+      "colors": [
+        {
+          "name": "Reflex Silver",
+          "hex": "#B7BBBE"
+        },
+        {
+          "name": "Candy White",
+          "hex": "#F4F5F6"
+        },
+        {
+          "name": "Rising Blue Metallic",
+          "hex": "#1F4E79"
+        },
+        {
+          "name": "Deep Black Pearl",
+          "hex": "#101215"
+        }
+      ],
+      "variants": [
+        {
+          "id": "taigun-comfortline-1-0l-tsi-6-speed-mt",
+          "model_slug": "taigun-chrome",
+          "model_name": "Taigun Chrome",
+          "name": "Taigun Comfortline 1.0 TSI MT",
+          "trim": "Comfortline",
+          "engine": "1.0L TSI",
+          "power": "115 PS",
+          "torque": "178 Nm",
+          "transmission": "6-speed MT",
+          "drivetrain": "FWD",
+          "fuel": "Petrol",
+          "seats": 5,
+          "body_type": "SUV",
+          "price": 1170000,
+          "currency": "INR",
+          "price_note": "Indicative ex-showroom, Bengaluru"
+        },
+        {
+          "id": "taigun-highline-1-0l-tsi-6-speed-mt",
+          "model_slug": "taigun-chrome",
+          "model_name": "Taigun Chrome",
+          "name": "Taigun Highline 1.0 TSI MT",
+          "trim": "Highline",
+          "engine": "1.0L TSI",
+          "power": "115 PS",
+          "torque": "178 Nm",
+          "transmission": "6-speed MT",
+          "drivetrain": "FWD",
+          "fuel": "Petrol",
+          "seats": 5,
+          "body_type": "SUV",
+          "price": 1440000,
+          "currency": "INR",
+          "price_note": "Indicative ex-showroom, Bengaluru"
+        },
+        {
+          "id": "taigun-highline-1-0l-tsi-6-speed-at",
+          "model_slug": "taigun-chrome",
+          "model_name": "Taigun Chrome",
+          "name": "Taigun Highline 1.0 TSI AT",
+          "trim": "Highline",
+          "engine": "1.0L TSI",
+          "power": "115 PS",
+          "torque": "178 Nm",
+          "transmission": "6-speed AT",
+          "drivetrain": "FWD",
+          "fuel": "Petrol",
+          "seats": 5,
+          "body_type": "SUV",
+          "price": 1670000,
+          "currency": "INR",
+          "price_note": "Indicative ex-showroom, Bengaluru"
+        },
+        {
+          "id": "taigun-topline-1-0l-tsi-6-speed-at",
+          "model_slug": "taigun-chrome",
+          "model_name": "Taigun Chrome",
+          "name": "Taigun Topline 1.0 TSI AT",
+          "trim": "Topline",
+          "engine": "1.0L TSI",
+          "power": "115 PS",
+          "torque": "178 Nm",
+          "transmission": "6-speed AT",
+          "drivetrain": "FWD",
+          "fuel": "Petrol",
+          "seats": 5,
+          "body_type": "SUV",
+          "price": 1940000,
+          "currency": "INR",
+          "price_note": "Indicative ex-showroom, Bengaluru"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What engine options does the Taigun Chrome come with?",
+          "answer": "The Taigun Chrome is offered with the 1.5L TSI EVO (ACT) / 1.0L TSI, producing 150 PS / 115 PS and 250 Nm / 178 Nm, paired with 6-speed MT or 7-speed DSG."
+        },
+        {
+          "question": "How many variants of the Taigun Chrome are available?",
+          "answer": "Elite Motors lists 4 variants of the Taigun Chrome, across the Comfortline and Highline and Topline trims."
+        },
+        {
+          "question": "What is the price of the Taigun Chrome?",
+          "answer": "The Taigun Chrome ranges from ₹11,70,000 to ₹19,40,000 ex-showroom Bengaluru. Pricing is indicative — contact Elite Motors for on-road pricing."
+        },
+        {
+          "question": "How safe is the Taigun Chrome?",
+          "answer": "The Taigun Chrome carries a 5-star global ncap and offers up to 6 airbags, electronic stability control, 5-star global ncap, over 40 safety features."
+        },
+        {
+          "question": "Does the Taigun Chrome have a sunroof?",
+          "answer": "Yes — the Taigun Chrome is equipped with a electric sunroof."
+        },
+        {
+          "question": "What warranty does the Taigun Chrome carry?",
+          "answer": "Your Volkswagen is secured with a 4 year (100,000 kilometers) manufacturer's warranty to ensure a peaceful ownership experience."
+        },
+        {
+          "question": "Where can I service my Taigun Chrome in Bengaluru?",
+          "answer": "At Volkswagen Elite Motors, SY No. 49/8-9, 10, Hosur Rd, Singasandra, Bengaluru, Karnataka 560100. Service hours are Mon - Sat 08:45–18:30; Sun 08:45–18:30."
+        },
+        {
+          "question": "Can I book a test drive of the Taigun Chrome?",
+          "answer": "Yes. Test drives of the Taigun Chrome can be booked with Volkswagen Elite Motors on 080 4013 8004 or through the booking form on this site."
+        }
+      ]
+    }
+  ],
+  "service_models": [
+    "Volkswagen 1600",
+    "Volkswagen Ameo",
+    "Volkswagen Beetle",
+    "Volkswagen Caravelle",
+    "Volkswagen Caraville",
+    "Volkswagen CrossPolo",
+    "Volkswagen CrossPolo 2013-2015",
+    "Volkswagen GTI",
+    "Volkswagen Golf GTI",
+    "Volkswagen Jetta",
+    "Volkswagen Jetta 2007-2011",
+    "Volkswagen Jetta 2011-2013",
+    "Volkswagen Jetta 2013-2015",
+    "Volkswagen Multivan",
+    "Volkswagen Passat",
+    "Volkswagen Passat 2007-2010",
+    "Volkswagen Passat 2010-2014",
+    "Volkswagen Phaeton",
+    "Volkswagen Polo",
+    "Volkswagen Polo 2009-2013",
+    "Volkswagen Polo 2013-2015",
+    "Volkswagen Polo 2015-2019",
+    "Volkswagen Polo GT TSI",
+    "Volkswagen Polo GTI",
+    "Volkswagen Polo TSI",
+    "Volkswagen T-Cross",
+    "Volkswagen T-Roc",
+    "Volkswagen Taigun",
+    "Volkswagen Tayron R-Line",
+    "Volkswagen Tiguan",
+    "Volkswagen Tiguan Allspace",
+    "Volkswagen Touareg",
+    "Volkswagen Touareg 2010-2011",
+    "Volkswagen Vento",
+    "Volkswagen Vento 2010-2013",
+    "Volkswagen Vento 2013-2015",
+    "Volkswagen Vento 2015-2019",
+    "Volkswagen Vento TSI",
+    "Volkswagen Virtus"
+  ],
+  "service_packages": {
+    "intro": "With our promise to deliver complete peace of mind for each of our customers, we have created Service Value Packages, that promise just that. These packages ensure your car is looked after by experts year-after-year without you having to worry about increasing costs. So while we add life to your car, you add money to your wallet with Volkswagen Service Value Packages.",
+    "guarantees": [
+      "Protection against labour and spare part cost inflation",
+      "100% genuine parts guaranteed",
+      "Diagnosis and servicing by Certified Technicians only",
+      "Stress-free drives with complete peace of mind"
+    ],
+    "packages": [
+      {
+        "id": "svp-1-year",
+        "name": "1 Year Package",
+        "duration": "1 Year",
+        "image": "/assets/img/service-value/SVP-1-YEAR.jpg",
+        "benefits": [
+          "One free pick up and drop",
+          "50% discount on wheel alignment and balancing labour",
+          "15% discount on 3M interior enrichment treatments",
+          "20% discount on minor bodywork jobs",
+          "One free inspection service"
+        ]
+      },
+      {
+        "id": "svp-2-year",
+        "name": "2 Year Package",
+        "duration": "2 Years",
+        "image": "/assets/img/service-value/Volkswagen-Service-Value-Package-4.jpg",
+        "benefits": [
+          "Rs.1000 off on a purchase of 4 tyres",
+          "100% discount on wheel alignment and balancing labour (twice)",
+          "15% discount on accessories",
+          "20% discount on minor bodywork jobs",
+          "A complimentary car wash (twice)",
+          "Complimentary AC disinfection service (twice)"
+        ]
+      },
+      {
+        "id": "svp-hi5",
+        "name": "Hi5 Package",
+        "duration": "5 Years",
+        "image": "/assets/img/service-value/Hi5-Logo.jpg",
+        "featured": true,
+        "benefits": [
+          "Savings of up to 28%",
+          "5th-year maintenance-free",
+          "5 years of Servicing at the Cost of 4",
+          "Replacement of wear and tear parts"
+        ]
+      }
+    ]
+  },
+  "services": [
+    {
+      "id": "periodic",
+      "name": "Periodic Maintenance",
+      "icon": "wrench",
+      "description": "Scheduled servicing by Volkswagen-certified technicians using 100% genuine parts and factory diagnostics."
+    },
+    {
+      "id": "bodyshop",
+      "name": "Body & Paint",
+      "icon": "spray",
+      "description": "Insurance-approved bodyshop with computerised colour matching and a controlled paint booth."
+    },
+    {
+      "id": "diagnostics",
+      "name": "Digital Diagnostics",
+      "icon": "chip",
+      "description": "ODIS factory diagnostics that read every control unit before a spanner is lifted."
+    },
+    {
+      "id": "pickup",
+      "name": "Pick-up & Drop",
+      "icon": "truck",
+      "description": "We collect your car from home or office and return it serviced, washed and road-ready."
+    },
+    {
+      "id": "genuine-parts",
+      "name": "Genuine Parts",
+      "icon": "box",
+      "description": "Volkswagen Genuine Parts backed by manufacturer warranty and full traceability."
+    },
+    {
+      "id": "value-package",
+      "name": "Service Value Packages",
+      "icon": "shield",
+      "description": "Prepaid maintenance that locks today's prices against labour and parts inflation."
+    }
+  ],
+  "warranty": {
+    "standard": {
+      "title": "Standard Warranty",
+      "description": "Your Volkswagen is secured with a 4 year (100,000 kilometers) manufacturer's warranty to ensure a peaceful ownership experience.",
+      "years": 4,
+      "kilometers": 100000,
+      "image": "/assets/img/service-value/Volkswagen-Warranty-3.jpg"
+    },
+    "extended": {
+      "title": "Extended Warranty",
+      "description": "Extend cover beyond the standard 4-year manufacturer warranty and keep repair costs predictable for longer. Transferable on resale, which protects your car's residual value.",
+      "options": [
+        {
+          "term": "5th Year",
+          "kilometers": 125000
+        },
+        {
+          "term": "6th Year",
+          "kilometers": 150000
+        }
+      ]
+    }
+  },
+  "roadside_assistance": {
+    "title": "Roadside Assistance",
+    "description": "To avail Volkswagen's Roadside Assistance service after termination of 4 year warranty, purchase package.",
+    "assistance_note": "While your busy schedule deserves your full attention, caring for your vehicle deserves ours. With Volkswagen Assistance, we bring door-to-door service, just a phone call away.",
+    "image": "/assets/img/service-value/Volkswagen-Assistance-3.jpg",
+    "coverage": [
+      "24x7 emergency helpline",
+      "On-the-spot minor repairs",
+      "Towing to nearest authorised workshop",
+      "Battery jump-start",
+      "Flat tyre replacement",
+      "Emergency fuel delivery",
+      "Key lockout assistance",
+      "Accommodation and taxi support on long-distance breakdowns"
+    ]
+  },
+  "insurance": {
+    "title": "Volkswagen Insurance",
+    "description": "Your motor insurance includes exclusive benefits along with better and more extensive coverage. It ensures constant support with a 24*7 dedicated call center and fast and simple processing for customers without additional work and expenses.",
+    "benefits": [
+      "Exclusive benefits package",
+      "Extensive coverage",
+      "24/7 dedicated call centre support",
+      "Fast and simple claim processing",
+      "Minimal customer effort required",
+      "Cashless settlement at authorised workshops",
+      "Volkswagen Genuine Parts used on every claim"
+    ],
+    "form_fields": [
+      "Select Vehicle Model",
+      "Select Registration Year",
+      "Select Registration Month",
+      "Registration Number",
+      "Full Name",
+      "Mobile",
+      "Email",
+      "Location",
+      "Insurance Company",
+      "Policy Number",
+      "Insurance Expiry Date"
+    ]
+  },
+  "finance": {
+    "title": "Finance Calculator",
+    "description": "Model your EMI before you walk in. Adjust the loan amount, tenure and rate to see exactly what your Volkswagen costs each month.",
+    "defaults": {
+      "principal": 1500000,
+      "rate": 9.25,
+      "tenure_months": 60,
+      "down_payment_pct": 20
+    },
+    "limits": {
+      "principal_min": 300000,
+      "principal_max": 8000000,
+      "rate_min": 6,
+      "rate_max": 18,
+      "tenure_min": 12,
+      "tenure_max": 84
+    },
+    "partners": [
+      "HDFC Bank",
+      "ICICI Bank",
+      "Axis Bank",
+      "State Bank of India",
+      "Kotak Mahindra Prime",
+      "Volkswagen Finance"
+    ]
+  },
+  "careers": {
+    "title": "Careers at Elite Motors",
+    "description": "Elite Motors is supported by highly-skilled teams who work hard relentlessly to deliver superior customer service. If that sounds like you, we should talk.",
+    "image": "/assets/img/career/9e44b17c-d30e-4236-a8d0-05d02dcae362.jpg",
+    "upload_formats": [
+      "pdf",
+      "docx"
+    ],
+    "jobs": [
+      {
+        "id": "sales-consultant",
+        "title": "Sales Consultant",
+        "department": "Sales",
+        "location": "Hosur Road, Bengaluru",
+        "type": "Full-time",
+        "description": "Guide customers from first enquiry to delivery across the Volkswagen range."
+      },
+      {
+        "id": "front-office-executive",
+        "title": "Front Office Executive",
+        "department": "Customer Experience",
+        "location": "Hosur Road, Bengaluru",
+        "type": "Full-time",
+        "description": "First point of contact for every customer walking into the showroom."
+      },
+      {
+        "id": "crm",
+        "title": "Customer Relationship Manager",
+        "department": "Customer Experience",
+        "location": "Hosur Road, Bengaluru",
+        "type": "Full-time",
+        "description": "Own the post-sale relationship and drive satisfaction scores."
+      },
+      {
+        "id": "senior-technician",
+        "title": "Senior Technician",
+        "department": "Service",
+        "location": "Hosur Road, Bengaluru",
+        "type": "Full-time",
+        "description": "Diagnose and repair Volkswagen vehicles to factory standard using ODIS."
+      }
+    ]
+  },
+  "offers": [
+    {
+      "id": "exchange-bonus",
+      "title": "Exchange Bonus",
+      "value": "Up to ₹60,000",
+      "description": "Trade in your current car and carry the benefit straight into your new Volkswagen.",
+      "valid_till": "2026-09-30"
+    },
+    {
+      "id": "low-emi",
+      "title": "EMI from ₹18,999",
+      "value": "9.25% p.a.",
+      "description": "Low-rate finance on Taigun and Virtus, approved in under 48 hours.",
+      "valid_till": "2026-09-30"
+    },
+    {
+      "id": "svp-launch",
+      "title": "Hi5 Service Package",
+      "value": "Save up to 28%",
+      "description": "Five years of servicing at the cost of four, with the fifth year maintenance-free.",
+      "valid_till": "2026-12-31"
+    },
+    {
+      "id": "corporate",
+      "title": "Corporate Benefit",
+      "value": "Up to ₹25,000",
+      "description": "Additional benefit for employees of listed corporates and defence personnel.",
+      "valid_till": "2026-09-30"
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Rohit Menon",
+      "location": "Koramangala",
+      "model": "Taigun GT Plus Sport",
+      "rating": 5,
+      "quote": "The handover felt like a proper European delivery experience. The team walked me through every system before I drove out."
+    },
+    {
+      "name": "Ananya Rao",
+      "location": "HSR Layout",
+      "model": "Virtus GT Line",
+      "rating": 5,
+      "quote": "Service pick-up at 9am, car back by 6pm, fully washed and with a video of the work done. That's the standard now."
+    },
+    {
+      "name": "Karthik Iyer",
+      "location": "Electronic City",
+      "model": "Tiguan R-Line",
+      "rating": 5,
+      "quote": "They found me the exact colour I wanted from another stockyard rather than pushing what was on the floor."
+    },
+    {
+      "name": "Deepa Shetty",
+      "location": "Sarjapur Road",
+      "model": "Golf GTI",
+      "rating": 5,
+      "quote": "Booking the GTI test drive was genuinely fun. No pressure, just a proper drive on a route they'd planned out."
+    }
+  ],
+  "hero_slides": [
+    {
+      "image": "/assets/img/mainslider/desktop/tiguanrline-pc.jpg",
+      "mobile": "/assets/img/mainslider/mobile/tiguanrline-mob.jpg",
+      "eyebrow": "R-Line",
+      "title": "Tiguan R-Line",
+      "subtitle": "Sporty aesthetics meets precision German engineering.",
+      "cta": "Explore Tiguan",
+      "href": "/model.html?slug=tiguan-r-line"
+    },
+    {
+      "image": "/assets/img/mainslider/desktop/golfpc.jpg",
+      "mobile": "/assets/img/mainslider/mobile/golfmob.jpg",
+      "eyebrow": "265 hp · 0-100 in 5.9s",
+      "title": "Golf GTI",
+      "subtitle": "The hot hatch that wrote the rulebook.",
+      "cta": "Explore Golf GTI",
+      "href": "/model.html?slug=golf-gti"
+    },
+    {
+      "image": "/assets/img/mainslider/desktop/taigun1.jpg",
+      "mobile": "/assets/img/mainslider/mobile/taigun11.jpg",
+      "eyebrow": "5★ Global NCAP",
+      "title": "Taigun Sport",
+      "subtitle": "Built for the ones who go looking.",
+      "cta": "Explore Taigun",
+      "href": "/model.html?slug=taigun-sport"
+    },
+    {
+      "image": "/assets/img/mainslider/desktop/firstpc.jpg",
+      "mobile": "/assets/img/mainslider/mobile/firstmob.jpg",
+      "eyebrow": "Elite Motors · Hosur Road",
+      "title": "Elite by name. Elite by service.",
+      "subtitle": "An authorised Volkswagen dealership built around customer satisfaction.",
+      "cta": "Book a Test Drive",
+      "href": "/contact.html#test-drive"
+    }
+  ],
+  "legal": {
+    "copyright": "© 2026 Volkswagen Elite Motors. All rights reserved.",
+    "disclaimer": "Actual features, accessories and specification may vary depending on variant. Please contact the dealership for complete details.",
+    "links": [
+      {
+        "label": "Terms & Conditions",
+        "href": "/terms.html"
+      },
+      {
+        "label": "Privacy Policy",
+        "href": "/privacy.html"
+      }
+    ]
+  }
+}
