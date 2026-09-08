@@ -78,16 +78,25 @@ async def compare_cars(ids: str) -> dict[str, Any]:
         response.raise_for_status()
         return response.json()
 
-async def list_variants(model_id: str = None, trim: str = None, transmission: str = None, limit: int = 50) -> dict[str, Any]:
-    params = {"limit": limit}
+async def calculate_emi(
+    model_id: str = None,
+    down_payment: float = 0,
+    tenure_months: int = 60,
+    rate: float = 9.25,
+    principal: float = None
+) -> dict[str, Any]:
+    """Calculate monthly loan EMI, total interest, and repayment schedule for a car."""
+    params = {
+        "down_payment": down_payment,
+        "tenure_months": tenure_months,
+        "rate": rate
+    }
     if model_id:
         params["model_id"] = model_id
-    if trim:
-        params["trim"] = trim
-    if transmission:
-        params["transmission"] = transmission
+    if principal is not None:
+        params["principal"] = principal
     async with httpx.AsyncClient() as client:
-        response = await client.get(f"{API_BASE}/variants", params=params)
+        response = await client.get(f"{API_BASE}/finance/quote", params=params)
         response.raise_for_status()
         return response.json()
 

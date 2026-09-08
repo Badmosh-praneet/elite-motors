@@ -16,7 +16,7 @@ from mcp_connector.connector import (
     get_cars,
     get_car,
     compare_cars,
-    list_variants,
+    calculate_emi,
     book_test_drive,
     book_service,
     book_rental
@@ -61,15 +61,31 @@ TOOLS = [
         }
     },
     {
-        "name": "list_variants",
-        "description": "Every variant across the whole range, with its own price (GET /api/variants). Filter by 'model_id', 'trim' (e.g., GT Line), or 'transmission' (e.g., DSG, MT). Use this to find a specific variant to book.",
+        "name": "calculate_emi",
+        "description": "Calculate reducing-balance loan EMI, total interest, and repayment details for a Volkswagen vehicle (GET /api/finance/quote). Pass 'model_id' (e.g. 'taigun-sport', 'virtus-chrome') to automatically price against that car's starting price, or pass 'principal' for a custom amount. You can also specify 'down_payment' (default 0), 'tenure_months' (e.g. 36, 48, 60, 84; default 60), and 'rate' (annual interest percentage, default 9.25%).",
         "inputSchema": {
             "type": "object",
             "properties": {
-                "model_id": {"type": "string"},
-                "trim": {"type": "string"},
-                "transmission": {"type": "string"},
-                "limit": {"type": "integer"}
+                "model_id": {
+                    "type": "string",
+                    "description": "Car model slug (e.g. 'taigun-sport', 'virtus-chrome', 'golf-gti', 'tayron-r-line', 'tiguan-r-line')."
+                },
+                "principal": {
+                    "type": "number",
+                    "description": "Vehicle price / loan amount if not using model_id."
+                },
+                "down_payment": {
+                    "type": "number",
+                    "description": "Amount paid upfront by the customer in INR (default 0)."
+                },
+                "tenure_months": {
+                    "type": "integer",
+                    "description": "Loan tenure in months (e.g. 36, 48, 60, 84; default 60)."
+                },
+                "rate": {
+                    "type": "number",
+                    "description": "Annual interest rate percentage (default 9.25%)."
+                }
             }
         }
     },
@@ -195,8 +211,8 @@ async def mcp_handler(request: Request):
                 res = await get_car(**args)
             elif tool_name == "compare_cars":
                 res = await compare_cars(**args)
-            elif tool_name == "list_variants":
-                res = await list_variants(**args)
+            elif tool_name == "calculate_emi":
+                res = await calculate_emi(**args)
             elif tool_name == "get_dealership":
                 res = await get_dealership_full()
             elif tool_name == "book_test_drive":
